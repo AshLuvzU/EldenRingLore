@@ -24,6 +24,17 @@ img.map {
     margin-right: auto;
     display: block;
 }
+#image-container {
+  width: 100%;
+  height: 300px; 
+  overflow: hidden; 
+  cursor: grab; 
+}
+#eldenMap {
+  width: 100%;
+  height: 50%;
+}
+
 .header {
     padding: 0em;
     width: auto;

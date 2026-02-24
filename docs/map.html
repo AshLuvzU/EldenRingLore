@@ -6,6 +6,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=devide-width, initial-scale=1.0" />
         <link rel="stylesheet" type="text/css" href="RingStyle.css" />
+        <script src="https://unpkg.com/@panzoom/panzoom@4.6.1/dist/panzoom.min.js"></script>
     </head>
     <body>
         <div class="header">
@@ -16,9 +17,22 @@
         </div>
         <section class="txt">
             <h1>Map of The Lands Between</h1>
-            <p>Map</p>
-            <div class="flex">
-                <img class="map" src="images/eldenMap.jpg"/>
+            <p>Click and drag to explore the map! You can also zoom in for a closer look.</p>
+            <div class="flex-container">
+                <div class="image-container">
+                    <img id="eldenMap" src="images/eldenMap.jpg" class="map" />
+                    <script>
+                        document.addEventListener('DOMContentLoaded', () => {
+                            const image = document.getElementById('eldenMap');
+                            const panzoomInstance = Panzoom(image, {
+                                maxScale: 5,
+                                contain: 'outside',
+                            });
+                            
+                            image.parentElement.addEventListener('wheel', panzoomInstance.zoomWithWheel);
+                        });</script>
+                </div>
             </div>
-        </section></body>
+        </section>
+    </body>
 </html>
