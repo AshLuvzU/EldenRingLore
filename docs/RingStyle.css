@@ -1,0 +1,43 @@
+body {
+    background-image: url("images/oldPaper.jpg");
+    background-color: floralwhite;
+    font-family: "Cinzel Decorative";
+    color: black;
+}
+a:visited {
+    color: #d8b741;
+}
+a:hover {
+    color: #d4af2b;
+}
+a:link {
+    color: #be9e27;
+}
+flex-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+img.map {
+    width: 100%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.header {
+    padding: 0em;
+    width: auto;
+    background: #513605;
+    border: #302003;
+    border-style: solid;
+    color: white;
+    text-align: center;
+}
+section.txt {
+    background: rgb(207, 172, 42, 0.4);
+    width: 80%;
+    border: #a98c23;
+    border-style: solid;
+    margin: auto;
+    padding: 1em;
+}
