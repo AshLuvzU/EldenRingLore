@@ -23,6 +23,9 @@ flex-container {
     width: 800px;
     margin: auto;
 }
+.leaflet-control-mouseposition {
+     background-color: rgb(255, 220, 46, 0.5);
+}
 .header {
     padding: 0em;
     width: auto;
