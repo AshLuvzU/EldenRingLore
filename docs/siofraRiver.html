@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Elden Ring Lore</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=devide-width, initial-scale=1.0" />
+        <link rel="stylesheet" type="text/css" href="RingStyle.css" />
+        <link rel="icon" type="image/x-icon" href="images/eldenRing.jpg" />
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+            integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Siofra River</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="landsBetween.html">The Lands Between</a>
+                <a href="ainselRiver.html">Ainsel River</a>
+                <a href="siofraRiver.html">Siofra River</a>
+                <a href="deeprootDepths.html">DeeprootDepths</a>
+            </nav>
+        </div>
+        <section class="txt">
+            <h1>Map of Siofra River</h1>
+            <p>Click and drag to explore the map! You can also zoom in for a closer look.</p>
+            <div class="flex-container">
+                <div id="map" class="ainsel">
+                    <script>
+                    var map = L.map('map', {
+                        maxZoom: 2,
+                        crs: L.CRS.Simple
+                    });
+                    var CoordsControl = L.Control.extend({
+                        onAdd: function (map) {
+                            var container = L.DomUtil.create('div', 'leaflet-control-mouseposition');
+                            map.on('mousemove', function (e) {
+                                container.innerHTML = 'Lat: ' + e.latlng.lat.toFixed(4) + ', Lng: ' + e.latlng.lng.toFixed(4);
+                            });
+                            return container;
+                        },
+                        onRemove: function (map) {
+                        }
+                    });
+                    
+                    map.addControl(new CoordsControl({
+                        position: 'bottomleft'
+                    }));
+                    var imageUrl = 'images/siofraRiver.jpg';
+                    var imageBounds =[[0, 0],[400, 600]];
+                    L.imageOverlay(imageUrl, imageBounds).addTo(map);
+                    map.fitBounds(imageBounds);</script>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
