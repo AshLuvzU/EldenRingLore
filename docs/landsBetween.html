@@ -73,33 +73,58 @@
                     L.marker([261.2656, 278.2192], {
                         icon: towerIcon
                     }).addTo(map).bindTooltip("Divine Tower of Liurnia", {
-                        direction: 'top', permanent: false, offset: [2, -30]
-                    });
+                        direction: 'top', permanent: false, offset:[2, -30]
+                    }).bindPopup(`<div style="width:300px;">
+                            <h3>Divine Tower of Liurnia</h3>
+                            <iframe src="towerResults.html?id=liurnia" width="100%" height="250"
+                                style="border:1;"> </iframe>
+                        </div>
+                    `, { maxWidth: 320 });
                     L.marker([186.6406, 356.5317], {
                         icon: towerIcon
                     }).addTo(map).bindTooltip("Divine Tower of Limgrave", {
-                        direction: 'top', permanent: false, offset: [2, -30]
-                    });
+                        direction: 'top', permanent: false, offset:[2, -30]
+                    }).bindPopup(`<div style="width:300px;">
+                            <h3>Divine Tower of Limgrave</h3>
+                            <iframe src="towerResults.html?id=limgrave" width="100%" height="250"
+                                style="border:1;"> </iframe>
+                        </div>
+                    `, { maxWidth: 320 });
                     L.marker([215.6563, 421.9385], {
                         icon: towerIcon
                     }).addTo(map).bindTooltip("Divine Tower of Caelid", {
-                        direction: 'top', permanent: false, offset: [2, -30]
-                    });
+                        direction: 'top', permanent: false, offset:[2, -30]
+                    }).bindPopup(`<div style="width:300px;">
+                            <h3>Divine Tower of Caelid</h3>
+                            <iframe src="towerResults.html?id=caelid" width="100%" height="250"
+                                style="border:1;"> </iframe>
+                        </div>
+                    `, { maxWidth: 320 });
                     L.marker([283.5156, 510.2192], {
                         icon: towerIcon
                     }).addTo(map).bindTooltip("Isolated Divine Tower", {
-                        direction: 'top', permanent: false, offset: [2, -30]
+                        direction: 'top', permanent: false, offset:[2, -30]
                     });
                     L.marker([349.8906, 435.9692], {
                         icon: towerIcon
                     }).addTo(map).bindTooltip("Divine Tower of East Altus", {
-                        direction: 'top', permanent: false, offset: [2, -30]
-                    });
+                        direction: 'top', permanent: false, offset:[2, -30]
+                    }).bindPopup(`<div style="width:300px;">
+                            <h3>Divine Tower of East Altus</h3>
+                            <iframe src="towerResults.html?id=eastAltus" width="100%" height="250"
+                                style="border:1;"> </iframe>
+                        </div>
+                    `, { maxWidth: 320 });
                     L.marker([338.4063, 328.3135], {
                         icon: towerIcon
                     }).addTo(map).bindTooltip("Divine Tower of West Altus", {
-                        direction: 'top', permanent: false, offset: [2, -30]
-                    });</script>
+                        direction: 'top', permanent: false, offset:[2, -30]
+                    }).bindPopup(`<div style="width:300px;">
+                            <h3>Divine Tower of West Altus</h3>
+                            <iframe src="towerResults.html?id=westAltus" width="100%" height="250"
+                                style="border:1;"> </iframe>
+                        </div>
+                    `, { maxWidth: 320 });</script>
                 </div>
             </div>
         </section>
