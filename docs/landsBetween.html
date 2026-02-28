@@ -104,7 +104,12 @@
                         icon: towerIcon
                     }).addTo(map).bindTooltip("Isolated Divine Tower", {
                         direction: 'top', permanent: false, offset:[2, -30]
-                    });
+                    }).bindPopup(`<div style="width:300px;">
+                            <h3>Isolated Divine Tower</h3>
+                            <iframe src="towerResults.html?id=isolated" width="100%" height="250"
+                                style="border:1;"> </iframe>
+                        </div>
+                    `, { maxWidth: 320 });
                     L.marker([349.8906, 435.9692], {
                         icon: towerIcon
                     }).addTo(map).bindTooltip("Divine Tower of East Altus", {
