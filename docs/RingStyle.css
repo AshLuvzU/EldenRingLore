@@ -1,8 +1,16 @@
 body {
-    background-image: url("images/oldPaper.jpg");
+    background-image: url("images/oldPaper.png");
     background-color: floralwhite;
-    font-family: "Cinzel Decorative";
+    font-family: "Agmena";
     color: black;
+}
+@font-face {
+  font-family: "Agmena";
+  src: url("fonts/Agmena W01 Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "Mantinia Regular";
+  src: url("fonts/Mantinia Regular.otf") format("opentype");
 }
 a:visited {
     color: #d8b741;
@@ -17,21 +25,20 @@ flex-container {
     display: flex;
     justify-content: space-evenly;
 }
-
 #map {
     height: 600px;
     width: 800px;
     margin: auto;
     background: black;
-}
-#map.ainsel {
-    height: 600px;
-    width: 800px;
-    margin: auto;
-    background: black;
+    border: groove;
+    border-width: 5px;
+    border-color: rgb(77, 51, 0);
 }
 .leaflet-control-mouseposition {
-     background-color: rgb(255, 220, 46, 0.5);
+    background-color: rgb(255, 220, 46, 0.5);
+}
+.top {
+    font-family: "Mantinia Regular";
 }
 .header {
     padding: 0em;
@@ -42,8 +49,25 @@ flex-container {
     color: white;
     text-align: center;
 }
+.pic {
+    height: 60%;
+    width: 60%;
+    margin-left: 11%;
+    padding: 1em;
+    border: dashed;
+    border-width: 6px;
+    border-radius: 1000px;
+    border-color: rgb(179, 134, 0, 0.7);
+}
 .tower {
-    background: rgb(207, 172, 42, 0.4);    
+    background: rgb(207, 172, 42, 0.4);
+    display: none;
+    padding: 1em; 
+}
+.rem {
+    background: rgb(0, 107, 179, 0.4);
+    display: none;
+    padding: 1em;
 }
 section.txt {
     background: rgb(207, 172, 42, 0.4);

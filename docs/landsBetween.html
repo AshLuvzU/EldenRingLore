@@ -6,25 +6,30 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=devide-width, initial-scale=1.0" />
         <link rel="stylesheet" type="text/css" href="RingStyle.css" />
-        <link rel="icon" type="image/x-icon" href="images/eldenRing.jpg" />
+        <link rel="icon" type="image/x-icon" href="images/eldenRing.png" />
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
             integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     </head>
     <body>
         <div class="header">
-            <h1>The Lands Between</h1>
+            <h1 class="top">The Lands Between</h1>
             <nav>
                 <a href="index.html">Home</a>
                 <a href="landsBetween.html">The Lands Between</a>
                 <a href="ainselRiver.html">Ainsel River</a>
                 <a href="siofraRiver.html">Siofra River</a>
-                <a href="deeprootDepths.html">DeeprootDepths</a>
+                <a href="deeprootDepths.html">Deeproot Depths</a>
             </nav>
         </div>
         <section class="txt">
             <h1>Map of The Lands Between</h1>
-            <p>Click and drag to explore the map! You can also zoom in for a closer look.</p>
+            <p>The Lands Between is an insular landmass featuring diverse biomes, including lush
+                southern grasslands, a temperate central region, and a frozen, mountainous north.
+                The Erdtree dominates the skyline, its golden presence visible across most of the
+                realm. Two great underground rivers and an enormous root system span the continent's
+                length.</p>
+            <p>This area was once ruled by Queen Marika the Eternal.</p>
             <div class="flex-container">
                 <div id="map">
                     <script>
@@ -47,7 +52,7 @@
                     map.addControl(new CoordsControl({
                         position: 'bottomleft'
                     }));
-                    var imageUrl = 'images/eldenMap.jpg';
+                    var imageUrl = 'images/eldenMap.png';
                     var imageBounds =[[0, 0],[600, 800]];
                     L.imageOverlay(imageUrl, imageBounds).addTo(map);
                     map.fitBounds(imageBounds);
@@ -58,14 +63,11 @@
                             popupAnchor:[2, -30]
                         }
                     });
-                    var Icon = new IconIcon({
-                        iconUrl: 'images/blue.jpg'
+                    var remIcon = new IconIcon({
+                        iconUrl: 'images/blue.png'
                     });
                     var towerIcon = new IconIcon({
-                        iconUrl: 'images/brown.jpg'
-                    });
-                    var Icon = new IconIcon({
-                        iconUrl: 'images/brown.jpg'
+                        iconUrl: 'images/brown.png'
                     });
                     L.icon = function (options) {
                         return new L.Icon(options);
@@ -76,7 +78,7 @@
                         direction: 'top', permanent: false, offset:[2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Divine Tower of Liurnia</h3>
-                            <iframe src="towerResults.html?id=liurnia" width="100%" height="250"
+                            <iframe src="results.html?id=liurnia" width="100%" height="250"
                                 style="border:1;"> </iframe>
                         </div>
                     `, { maxWidth: 320 });
@@ -86,7 +88,7 @@
                         direction: 'top', permanent: false, offset:[2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Divine Tower of Limgrave</h3>
-                            <iframe src="towerResults.html?id=limgrave" width="100%" height="250"
+                            <iframe src="results.html?id=limgrave" width="100%" height="250"
                                 style="border:1;"> </iframe>
                         </div>
                     `, { maxWidth: 320 });
@@ -96,7 +98,7 @@
                         direction: 'top', permanent: false, offset:[2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Divine Tower of Caelid</h3>
-                            <iframe src="towerResults.html?id=caelid" width="100%" height="250"
+                            <iframe src="results.html?id=caelid" width="100%" height="250"
                                 style="border:1;"> </iframe>
                         </div>
                     `, { maxWidth: 320 });
@@ -106,7 +108,7 @@
                         direction: 'top', permanent: false, offset:[2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Isolated Divine Tower</h3>
-                            <iframe src="towerResults.html?id=isolated" width="100%" height="250"
+                            <iframe src="results.html?id=isolated" width="100%" height="250"
                                 style="border:1;"> </iframe>
                         </div>
                     `, { maxWidth: 320 });
@@ -116,7 +118,7 @@
                         direction: 'top', permanent: false, offset:[2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Divine Tower of East Altus</h3>
-                            <iframe src="towerResults.html?id=eastAltus" width="100%" height="250"
+                            <iframe src="results.html?id=eastAltus" width="100%" height="250"
                                 style="border:1;"> </iframe>
                         </div>
                     `, { maxWidth: 320 });
@@ -126,7 +128,97 @@
                         direction: 'top', permanent: false, offset:[2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Divine Tower of West Altus</h3>
-                            <iframe src="towerResults.html?id=westAltus" width="100%" height="250"
+                            <iframe src="results.html?id=westAltus" width="100%" height="250"
+                                style="border:1;"> </iframe>
+                        </div>
+                    `, { maxWidth: 320 });
+                    L.marker([132.1563, 532.8135], {
+                        icon: remIcon
+                    }).addTo(map).bindTooltip("Remembrance of the Starscourge", {
+                        direction: 'top', permanent: false, offset:[2, -30]
+                    }).bindPopup(`<div style="width:300px;">
+                            <h3>Remembrance of the Starscourge</h3>
+                            <iframe src="results.html?id=star" width="100%" height="250"
+                                style="border:1;"> </iframe>
+                        </div>
+                    `, { maxWidth: 320 });
+                    L.marker([169.1563, 256.6885], {
+                        icon: remIcon
+                    }).addTo(map).bindTooltip("Remembrance of the Grafted", {
+                        direction: 'top', permanent: false, offset:[2, -30]
+                    }).bindPopup(`<div style="width:300px;">
+                            <h3>Remembrance of the Grafted</h3>
+                            <iframe src="results.html?id=graft" width="100%" height="250"
+                                style="border:1;"> </iframe>
+                        </div>
+                    `, { maxWidth: 320 });
+                    L.marker([282.2031, 150.4692], {
+                        icon: remIcon
+                    }).addTo(map).bindTooltip("Remembrance of the Full Moon Queen", {
+                        direction: 'top', permanent: false, offset:[2, -30]
+                    }).bindPopup(`<div style="width:300px;">
+                            <h3>Remembrance of the Full Moon Queen</h3>
+                            <iframe src="results.html?id=moon" width="100%" height="250"
+                                style="border:1;"> </iframe>
+                        </div>
+                    `, { maxWidth: 320 });
+                    L.marker([413.0781, 191.0317], {
+                        icon: remIcon
+                    }).addTo(map).bindTooltip("Remembrance of the Blasphemous", {
+                        direction: 'top', permanent: false, offset:[2, -30]
+                    }).bindPopup(`<div style="width:300px;">
+                            <h3>Remembrance of the Blasphemous</h3>
+                            <iframe src="results.html?id=blas" width="100%" height="250"
+                                style="border:1;"> </iframe>
+                        </div>
+                    `, { maxWidth: 320 });
+                    L.marker([355.6563, 382.9385], {
+                        icon: remIcon
+                    }).addTo(map).bindTooltip("Remembrance of the Omen King", {
+                        direction: 'top', permanent: false, offset:[2, -30]
+                    }).bindPopup(`<div style="width:300px;">
+                            <h3>Remembrance of the Omen King</h3>
+                            <iframe src="results.html?id=omen" width="100%" height="250"
+                                style="border:1;"> </iframe>
+                        </div>
+                    `, { maxWidth: 320 });
+                    L.marker([396.6563, 542.4385], {
+                        icon: remIcon
+                    }).addTo(map).bindTooltip("Remembrance of the Fire Giant", {
+                        direction: 'top', permanent: false, offset:[2, -30]
+                    }).bindPopup(`<div style="width:300px;">
+                            <h3>Remembrance of the Fire Giant</h3>
+                            <iframe src="results.html?id=fire" width="100%" height="250"
+                                style="border:1;"> </iframe>
+                        </div>
+                    `, { maxWidth: 320 });
+                    L.marker([553.1563, 480.0635], {
+                        icon: remIcon
+                    }).addTo(map).bindTooltip("Remembrance of the Rot Goddess", {
+                        direction: 'top', permanent: false, offset:[2, -30]
+                    }).bindPopup(`<div style="width:300px;">
+                            <h3>Remembrance of the Rot Goddess</h3>
+                            <iframe src="results.html?id=rot" width="100%" height="250"
+                                style="border:1;"> </iframe>
+                        </div>
+                    `, { maxWidth: 320 });
+                    L.marker([301.6563, 731.1885], {
+                        icon: remIcon
+                    }).addTo(map).bindTooltip("Remembrance of the Dragonlord", {
+                        direction: 'top', permanent: false, offset:[2, -30]
+                    }).bindPopup(`<div style="width:300px;">
+                            <h3>Remembrance of the Dragonlord</h3>
+                            <iframe src="results.html?id=lord" width="100%" height="250"
+                                style="border:1;"> </iframe>
+                        </div>
+                    `, { maxWidth: 320 });
+                    L.marker([306.0313, 747.5635], {
+                        icon: remIcon
+                    }).addTo(map).bindTooltip("Remembrance of the Black Blade", {
+                        direction: 'top', permanent: false, offset:[2, -30]
+                    }).bindPopup(`<div style="width:300px;">
+                            <h3>Remembrance of the Black Blade</h3>
+                            <iframe src="results.html?id=blade" width="100%" height="250"
                                 style="border:1;"> </iframe>
                         </div>
                     `, { maxWidth: 320 });</script>
