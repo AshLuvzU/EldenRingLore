@@ -13,13 +13,23 @@
     <body>
         <div class="header">
             <h1 class="top">Ainsel River</h1>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="landsBetween.html">The Lands Between</a>
-                <a href="ainselRiver.html">Ainsel River</a>
-                <a href="siofraRiver.html">Siofra River</a>
-                <a href="deeprootDepths.html">Deeproot Depths</a>
-            </nav>
+            <ul id="nav" >
+                <li class="navB">
+                    <a class="link" href="index.html">Home</a>
+                </li>
+                <li class="navB">
+                    <a class="link" href="landsBetween.html">The Lands Between</a>
+                </li>
+                <li class="navB">
+                    <a class="link" href="ainselRiver.html">Ainsel River</a>
+                </li>
+                <li class="navB">
+                    <a class="link" href="siofraRiver.html">Siofra River</a>
+                </li>
+                <li class="navB">
+                    <a class="link" href="deeprootDepths.html">DeeprootDepths</a>
+                </li>
+            </ul>
         </div>
         <section class="txt">
             <h1>Map of Ainsel River</h1>
@@ -67,8 +77,8 @@
                     L.icon = function (options) {
                         return new L.Icon(options);
                     };
-                        icon: remIcon
-                   L.marker([70.1250, 92.7539], {
+                    icon: remIcon
+                    L.marker([70.1250, 92.7539], {
                         icon: remIcon
                     }).addTo(map).bindTooltip("Remembrance of the Naturalborn", {
                         direction: 'top', permanent: false, offset:[2, -30]

@@ -5,23 +5,17 @@ body {
     color: black;
 }
 @font-face {
-  font-family: "Agmena";
-  src: url("fonts/Agmena W01 Regular.otf") format("opentype");
+    font-family: "Agmena";
+    src: url("fonts/Agmena W01 Regular.otf") format("opentype");
 }
 @font-face {
-  font-family: "Mantinia Regular";
-  src: url("fonts/Mantinia Regular.otf") format("opentype");
+    font-family: "Mantinia Regular";
+    src: url("fonts/Mantinia Regular.otf") format("opentype");
 }
 a:visited {
-    color: #d8b741;
+    color: rgb(242, 110, 44);
 }
-a:hover {
-    color: #d4af2b;
-}
-a:link {
-    color: #be9e27;
-}
-flex-container {
+.flex-container {
     display: flex;
     justify-content: space-evenly;
 }
@@ -37,8 +31,34 @@ flex-container {
 .leaflet-control-mouseposition {
     background-color: rgb(255, 220, 46, 0.5);
 }
+ul#nav {
+    overflow: hidden;
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    justify-content: center;
+}
+li.navB {
+    display: block;
+    padding: 10px;
+    font-family: "Mantinia Regular";
+    border: groove;
+    border-color: rgb(24, 16, 2);
+    background-color: rgb(72, 48, 5);
+}
+a:hover {
+    color: #d4af2b;
+    background-color: rgb(229, 207, 128, 0.3);
+    padding: 2em;
+}
+a.link {
+    padding: 2em;
+    text-decoration: none;
+    font-size: 20px;
+}
 .top {
     font-family: "Mantinia Regular";
+    color: rgb(229, 207, 128);
 }
 .header {
     padding: 0em;
@@ -62,7 +82,7 @@ flex-container {
 .tower {
     background: rgb(207, 172, 42, 0.4);
     display: none;
-    padding: 1em; 
+    padding: 1em;
 }
 .rem {
     background: rgb(0, 107, 179, 0.4);
@@ -72,6 +92,7 @@ flex-container {
 section.txt {
     background: rgb(207, 172, 42, 0.4);
     width: 80%;
+    font-size: 20px;
     border: #a98c23;
     border-style: solid;
     margin: auto;
