@@ -221,6 +221,26 @@
                             <iframe src="results.html?id=blade" width="100%" height="250"
                                 style="border:1;"> </iframe>
                         </div>
+                    `, { maxWidth: 320 });
+                    L.marker([352.7813, 390.0635], {
+                        icon: remIcon
+                    }).addTo(map).bindTooltip("Remembrance of Hoarah Loux", {
+                        direction: 'top', permanent: false, offset:[2, -30]
+                    }).bindPopup(`<div style="width:300px;">
+                            <h3>Remembrance of Hoarah Loux</h3>
+                            <iframe src="results.html?id=lion" width="100%" height="250"
+                                style="border:1;"> </iframe>
+                        </div>
+                    `, { maxWidth: 320 });
+                    L.marker([349.5313, 398.3135], {
+                        icon: remIcon
+                    }).addTo(map).bindTooltip("Elden Remembrance", {
+                        direction: 'top', permanent: false, offset:[2, -30]
+                    }).bindPopup(`<div style="width:300px;">
+                            <h3>Elden Remembrance</h3>
+                            <iframe src="results.html?id=beast" width="100%" height="250"
+                                style="border:1;"> </iframe>
+                        </div>
                     `, { maxWidth: 320 });</script>
                 </div>
             </div>
