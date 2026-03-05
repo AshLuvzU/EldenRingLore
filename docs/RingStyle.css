@@ -61,6 +61,7 @@ a.link {
     color: rgb(229, 207, 128);
 }
 .header {
+    background-image: url("images/erdtree.png");
     padding: 0em;
     width: auto;
     background: #513605;
@@ -88,6 +89,15 @@ a.link {
     background: rgb(0, 107, 179, 0.4);
     display: none;
     padding: 1em;
+}
+.gif {
+    height: 60%;
+    width: 60%;
+    margin-left: 20%;
+    padding: 0em;
+    border: groove;
+    border-width: 6px;
+    border-color: rgb(179, 134, 0, 0.7);
 }
 section.txt {
     background: rgb(207, 172, 42, 0.4);
