@@ -3,7 +3,7 @@
     <head>
         <title>Elden Ring Lore</title>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=devide-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" type="text/css" href="RingStyle.css" />
         <link rel="icon" type="image/x-icon" href="images/eldenRing.png" />
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -96,7 +96,24 @@
                             <iframe src="results.html?id=regal" width="100%" height="250"
                                 style="border:1;"> </iframe>
                         </div>
-                    `, { maxWidth: 320 });</script>
+                    `, { maxWidth: 320 });
+                    var legend = L.control({
+                        position: "bottomleft"
+                    });
+                    
+                    var legend = L.control({ position: "bottomleft" });
+
+legend.onAdd = function () {
+    var div = L.DomUtil.create("div", "info legend");
+
+    div.innerHTML += "<h4>Important Items and Places</h4>";
+    div.innerHTML += '<img src="images/brown.png" width="20"/> Divine Towers<br/>';
+    div.innerHTML += '<img src="images/blue.png" width="20"/> Remembrances<br/>';
+
+    return div;
+};
+
+legend.addTo(map);</script>
                 </div>
             </div>
         </section>

@@ -98,3 +98,26 @@ section.txt {
     margin: auto;
     padding: 1em;
 }
+.legend {
+    background: rgb(207, 172, 42, 0.4);
+    color: black;
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid #8b7500;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+    font-family: "Cinzel", serif;
+    font-size: 14px;
+}
+.legend h4 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    text-align: center;
+    color: #ffd700;
+}
+.legend img {
+    vertical-align: middle;
+    margin-right: 6px;
+}
+.legend:hover {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+}

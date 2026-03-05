@@ -4,12 +4,16 @@
     <head>
         <title>Elden Ring Lore</title>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=devide-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" type="text/css" href="RingStyle.css" />
         <link rel="icon" type="image/x-icon" href="images/eldenRing.png" />
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
             integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+        <script src="https://cdn.jsdelivr.net/gh/aazuspan/leaflet-feature-legend/src/feature-legend.js"></script>
+        <link
+            href="https://cdn.jsdelivr.net/gh/aazuspan/leaflet-feature-legend/src/feature-legend.css"
+            rel="stylesheet" />
     </head>
     <body>
         <div class="header">
@@ -62,31 +66,31 @@
                     map.addControl(new CoordsControl({
                         position: 'bottomleft'
                     }));
-                var imageUrl = 'images/eldenMap.png';
-                var imageBounds =[[0, 0],[600, 800]];
-                L.imageOverlay(imageUrl, imageBounds).addTo(map);
-                map.fitBounds(imageBounds);
-                var IconIcon = L.Icon.extend({
-                    options: {
-                        iconSize:[50, 50],
-                        iconAnchor:[23, 40],
-                        popupAnchor:[2, -30]
-                    }
-                });
-                var remIcon = new IconIcon({
-                    iconUrl: 'images/blue.png'
-                });
-                var towerIcon = new IconIcon({
-                    iconUrl: 'images/brown.png'
-                });
-                L.icon = function (options) {
-                    return new L.Icon(options);
-                };
-                L.marker([261.2656, 278.2192], {
-                    icon: towerIcon
-                }).addTo(map).bindTooltip("Divine Tower of Liurnia", {
-                    direction: 'top', permanent: false, offset:[2, -30]
-                }).bindPopup(`<div style="width:300px;">
+                    var imageUrl = 'images/eldenMap.png';
+                    var imageBounds =[[0, 0],[600, 800]];
+                    L.imageOverlay(imageUrl, imageBounds).addTo(map);
+                    map.fitBounds(imageBounds);
+                    var IconIcon = L.Icon.extend({
+                        options: {
+                            iconSize:[50, 50],
+                            iconAnchor:[23, 40],
+                            popupAnchor:[2, -30]
+                        }
+                    });
+                    var remIcon = new IconIcon({
+                        iconUrl: 'images/blue.png'
+                    });
+                    var towerIcon = new IconIcon({
+                        iconUrl: 'images/brown.png'
+                    });
+                    L.icon = function (options) {
+                        return new L.Icon(options);
+                    };
+                    L.marker([261.2656, 278.2192], {
+                        icon: towerIcon
+                    }).addTo(map).bindTooltip("Divine Tower of Liurnia", {
+                        direction: 'top', permanent: false, offset:[2, -30]
+                    }).bindPopup(`<div style="width:300px;">
                             <h3>Divine Tower of Liurnia</h3>
                             <iframe src="results.html?id=liurnia" width="100%" height="250"
                                 style="border:1;"> </iframe>
@@ -251,7 +255,24 @@
                             <iframe src="results.html?id=beast" width="100%" height="250"
                                 style="border:1;"> </iframe>
                         </div>
-                    `, { maxWidth: 320 });</script>
+                    `, { maxWidth: 320 });
+                    var legend = L.control({
+                        position: "bottomleft"
+                    });
+                    
+                    var legend = L.control({ position: "bottomleft" });
+
+legend.onAdd = function () {
+    var div = L.DomUtil.create("div", "info legend");
+
+    div.innerHTML += "<h4>Important Items and Places</h4>";
+    div.innerHTML += '<img src="images/brown.png" width="20"/> Divine Towers<br/>';
+    div.innerHTML += '<img src="images/blue.png" width="20"/> Remembrances<br/>';
+
+    return div;
+};
+
+legend.addTo(map);</script>
                 </div>
             </div>
         </section>
