@@ -71,16 +71,17 @@ a.link {
     font-size: 22px;
     line-height: 1.6;
     text-align: center;
+    font-family: "Agmena";
 }
 .top {
     font-family: "Mantinia Regular";
-    color: rgb(229, 207, 128);
+    color: rgb(45, 28, 8);
 }
-.header {
+.tree {
     background-image: url("images/erdtree.png");
     padding: 0em;
     width: auto;
-    background: #513605;
+    background-color: #513605;
     border: #302003;
     border-style: solid;
     color: white;
@@ -115,11 +116,13 @@ a.link {
     background: rgb(0, 107, 179, 0.4);
     display: none;
     padding: 1em;
+    font-family: "Agmena";
 }
 .npc {
     background: rgb(230, 0, 0, 0.4);
     display: none;
     padding: 1em;
+    font-family: "Agmena";
 }
 .gif {
     height: 60%;

@@ -335,6 +335,38 @@
         <p>Goldmask can be found at various locations starting in Altus Plateau. He is also part of Brother Corhyn's
             questline, and is a staunch pursuer of Golden Order Fundamentalism. At each location, he does not move.</p>
     </div>
+    <div id="queen" class="npc">
+        <h2>Rennala, Queen of the Full Moon</h2>
+        <img class="picNpc" src="images/rennalaNPC.png" alt="Image of Rennala, Queen of the Full Moon" />
+        <button class="button" onclick="getQueenDialogue()">Random Dialogue</button>
+        <div id="dialogueQueen" class="dialogue"></div>
+        <script>
+            let queenLines = [];
+
+            fetch("EldenDialogue.json").then(res => res.json()).then(data => {
+
+                const npc = data.dialog["200"];
+
+                let rawLines = npc.info_en.split("<br/><br/>");
+
+                queenLines = rawLines.map(line => line.replace(/\[\d+\]/, "").trim()).filter(line => line.length > 0);
+            });
+
+            function getQueenDialogue() {
+
+                if (queenLines.length === 0) {
+                    document.getElementById("dialogueQueen").innerHTML = "Loading dialogue...";
+                    return;
+                }
+
+                const line = queenLines[Math.floor(Math.random() * queenLines.length)];
+
+                document.getElementById("dialogueQueen").innerHTML = line;
+            }</script>
+        <p>Rennala, Queen of the Full Moon is an NPC in Elden Ring. Rennala gives access to the Rebirth function,
+            allowing the player to reallocate their stats by using a Larval Tear (also called respeccing). She can also
+            be used to change the player's appearance.</p>
+    </div>
     <script>
         const params = new URLSearchParams(window.location.search);
         const id = params.get("id");

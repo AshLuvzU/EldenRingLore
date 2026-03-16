@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <div class="header">
+    <div class="tree">
         <h1 class="top">The Lands Between</h1>
         <ul id="nav">
             <li class="navB">
@@ -287,6 +287,16 @@
                     }).bindPopup(`<div style="width:300px;">
                             <h3>The Noble Goldmask</h3>
                             <iframe src="results.html?id=mask" width="100%" height="250"
+                                style="border:1;"> </iframe>
+                        </div>
+                    `, { maxWidth: 320 });
+                    L.marker([282.2168, 148.5317], {
+                        icon: npcIcon
+                    }).addTo(map).bindTooltip("Rennala, Queen of the Full Moon", {
+                        direction: 'top', permanent: false, offset:[2, -30]
+                    }).bindPopup(`<div style="width:300px;">
+                            <h3>Rennala, Queen of the Full Moon</h3>
+                            <iframe src="results.html?id=queen" width="100%" height="250"
                                 style="border:1;"> </iframe>
                         </div>
                     `, { maxWidth: 320 });
