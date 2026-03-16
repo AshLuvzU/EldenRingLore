@@ -241,12 +241,29 @@
                 
                 fetch("EldenDialogue.json").then(res => res.json()).then(data => {
                     
-                    let rawLines = data["106"].info_en.split("<br/><br/>");
+                    console.log("JSON loaded:", data);
+                    
+                    const npc = data.dialog[ "106"]; // Ranni
+                    
+                    if (! npc) {
+                        console.error("NPC 106 not found");
+                        return;
+                    }
+                    
+                    let rawLines = npc.info_en.split("<br/><br/>");
                     
                     dialogueLines = rawLines.map(line => line.replace(/\[\d+\]/, "").trim()).filter(line => line.length > 0);
-                });
+                    
+                    console.log("Parsed lines:", dialogueLines);
+                }). catch (err => console.error("Fetch failed:", err));
+                
                 
                 function getDialogue() {
+                    
+                    if (dialogueLines.length === 0) {
+                        document.getElementById("dialogueBox").innerHTML = "Loading dialogue...";
+                        return;
+                    }
                     
                     const line = dialogueLines[Math.floor(Math.random() * dialogueLines.length)];
                     

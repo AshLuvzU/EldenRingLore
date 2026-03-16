@@ -60,14 +60,17 @@ a.link {
     margin-left: 28%;
     font-family: "Agmena";
 }
-#dialogueBox{
-    width:600px;
-    padding:20px;
-    background:#111;
-    color:#e6d8a8;
-    font-family:serif;
-    border:2px solid #444;
-    font-size:20px;
+#dialogueBox {
+    width: 75%;
+    margin: 20px auto;
+    padding: 18px;
+    background: rgba(0, 0, 0, 0.85);
+    color: #e6d8a8;
+    border: 3px solid #8b7500;
+    box-shadow: 0 0 12px rgba(212, 175, 55, 0.5);
+    font-size: 22px;
+    line-height: 1.6;
+    text-align: center;
 }
 .top {
     font-family: "Mantinia Regular";
