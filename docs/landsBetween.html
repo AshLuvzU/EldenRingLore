@@ -1,52 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>Elden Ring Lore</title>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" type="text/css" href="RingStyle.css" />
-        <link rel="icon" type="image/x-icon" href="images/eldenRing.png" />
-        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-            integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-        <script src="https://cdn.jsdelivr.net/gh/aazuspan/leaflet-feature-legend/src/feature-legend.js"></script>
-        <link
-            href="https://cdn.jsdelivr.net/gh/aazuspan/leaflet-feature-legend/src/feature-legend.css"
-            rel="stylesheet" />
-    </head>
-    <body>
-        <div class="header">
-            <h1 class="top">The Lands Between</h1>
-            <ul id="nav">
-                <li class="navB">
-                    <a class="link" href="index.html">Home</a>
-                </li>
-                <li class="navB">
-                    <a class="link" href="landsBetween.html">The Lands Between</a>
-                </li>
-                <li class="navB">
-                    <a class="link" href="ainselRiver.html">Ainsel River</a>
-                </li>
-                <li class="navB">
-                    <a class="link" href="siofraRiver.html">Siofra River</a>
-                </li>
-                <li class="navB">
-                    <a class="link" href="deeprootDepths.html">DeeprootDepths</a>
-                </li>
-            </ul>
-        </div>
-        <section class="txt">
-            <h1>Map of The Lands Between</h1>
-            <p>The Lands Between is an insular landmass featuring diverse biomes, including lush
-                southern grasslands, a temperate central region, and a frozen, mountainous north.
-                The Erdtree dominates the skyline, its golden presence visible across most of the
-                realm. Two great underground rivers and an enormous root system span the continent's
-                length.</p>
-            <p>This area was once ruled by Queen Marika the Eternal.</p>
-            <div class="flex-container">
-                <div id="map">
-                    <script>
+
+<head>
+    <title>Elden Ring Lore</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="RingStyle.css" />
+    <link rel="icon" type="image/x-icon" href="images/eldenRing.png" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://cdn.jsdelivr.net/gh/aazuspan/leaflet-feature-legend/src/feature-legend.js"></script>
+    <link href="https://cdn.jsdelivr.net/gh/aazuspan/leaflet-feature-legend/src/feature-legend.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="header">
+        <h1 class="top">The Lands Between</h1>
+        <ul id="nav">
+            <li class="navB">
+                <a class="link" href="index.html">Home</a>
+            </li>
+            <li class="navB">
+                <a class="link" href="landsBetween.html">The Lands Between</a>
+            </li>
+            <li class="navB">
+                <a class="link" href="ainselRiver.html">Ainsel River</a>
+            </li>
+            <li class="navB">
+                <a class="link" href="siofraRiver.html">Siofra River</a>
+            </li>
+            <li class="navB">
+                <a class="link" href="deeprootDepths.html">DeeprootDepths</a>
+            </li>
+        </ul>
+    </div>
+    <section class="txt">
+        <h1>Map of The Lands Between</h1>
+        <p>The Lands Between is an insular landmass featuring diverse biomes, including lush
+            southern grasslands, a temperate central region, and a frozen, mountainous north.
+            The Erdtree dominates the skyline, its golden presence visible across most of the
+            realm. Two great underground rivers and an enormous root system span the continent's
+            length.</p>
+        <p>This area was once ruled by Queen Marika the Eternal.</p>
+        <div class="flex-container">
+            <div id="map">
+                <script>
                     var map = L.map('map', {
                         maxZoom: 4,
                         crs: L.CRS.Simple
@@ -62,19 +63,19 @@
                         onRemove: function (map) {
                         }
                     });
-                    
+
                     map.addControl(new CoordsControl({
                         position: 'bottomleft'
                     }));
                     var imageUrl = 'images/eldenMap.png';
-                    var imageBounds =[[0, 0],[600, 800]];
+                    var imageBounds = [[0, 0], [600, 800]];
                     L.imageOverlay(imageUrl, imageBounds).addTo(map);
                     map.fitBounds(imageBounds);
                     var IconIcon = L.Icon.extend({
                         options: {
-                            iconSize:[50, 50],
-                            iconAnchor:[23, 40],
-                            popupAnchor:[2, -30]
+                            iconSize: [50, 50],
+                            iconAnchor: [23, 40],
+                            popupAnchor: [2, -30]
                         }
                     });
                     var remIcon = new IconIcon({
@@ -92,7 +93,7 @@
                     L.marker([261.2656, 278.2192], {
                         icon: towerIcon
                     }).addTo(map).bindTooltip("Divine Tower of Liurnia", {
-                        direction: 'top', permanent: false, offset:[2, -30]
+                        direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Divine Tower of Liurnia</h3>
                             <iframe src="results.html?id=liurnia" width="100%" height="250"
@@ -102,7 +103,7 @@
                     L.marker([186.6406, 356.5317], {
                         icon: towerIcon
                     }).addTo(map).bindTooltip("Divine Tower of Limgrave", {
-                        direction: 'top', permanent: false, offset:[2, -30]
+                        direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Divine Tower of Limgrave</h3>
                             <iframe src="results.html?id=limgrave" width="100%" height="250"
@@ -112,7 +113,7 @@
                     L.marker([215.6563, 421.9385], {
                         icon: towerIcon
                     }).addTo(map).bindTooltip("Divine Tower of Caelid", {
-                        direction: 'top', permanent: false, offset:[2, -30]
+                        direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Divine Tower of Caelid</h3>
                             <iframe src="results.html?id=caelid" width="100%" height="250"
@@ -122,7 +123,7 @@
                     L.marker([283.5156, 510.2192], {
                         icon: towerIcon
                     }).addTo(map).bindTooltip("Isolated Divine Tower", {
-                        direction: 'top', permanent: false, offset:[2, -30]
+                        direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Isolated Divine Tower</h3>
                             <iframe src="results.html?id=isolated" width="100%" height="250"
@@ -132,7 +133,7 @@
                     L.marker([349.8906, 435.9692], {
                         icon: towerIcon
                     }).addTo(map).bindTooltip("Divine Tower of East Altus", {
-                        direction: 'top', permanent: false, offset:[2, -30]
+                        direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Divine Tower of East Altus</h3>
                             <iframe src="results.html?id=eastAltus" width="100%" height="250"
@@ -142,7 +143,7 @@
                     L.marker([338.4063, 328.3135], {
                         icon: towerIcon
                     }).addTo(map).bindTooltip("Divine Tower of West Altus", {
-                        direction: 'top', permanent: false, offset:[2, -30]
+                        direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Divine Tower of West Altus</h3>
                             <iframe src="results.html?id=westAltus" width="100%" height="250"
@@ -152,7 +153,7 @@
                     L.marker([132.1563, 532.8135], {
                         icon: remIcon
                     }).addTo(map).bindTooltip("Remembrance of the Starscourge", {
-                        direction: 'top', permanent: false, offset:[2, -30]
+                        direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Remembrance of the Starscourge</h3>
                             <iframe src="results.html?id=star" width="100%" height="250"
@@ -162,7 +163,7 @@
                     L.marker([169.1563, 256.6885], {
                         icon: remIcon
                     }).addTo(map).bindTooltip("Remembrance of the Grafted", {
-                        direction: 'top', permanent: false, offset:[2, -30]
+                        direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Remembrance of the Grafted</h3>
                             <iframe src="results.html?id=graft" width="100%" height="250"
@@ -172,7 +173,7 @@
                     L.marker([282.2031, 150.4692], {
                         icon: remIcon
                     }).addTo(map).bindTooltip("Remembrance of the Full Moon Queen", {
-                        direction: 'top', permanent: false, offset:[2, -30]
+                        direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Remembrance of the Full Moon Queen</h3>
                             <iframe src="results.html?id=moon" width="100%" height="250"
@@ -182,7 +183,7 @@
                     L.marker([413.0781, 191.0317], {
                         icon: remIcon
                     }).addTo(map).bindTooltip("Remembrance of the Blasphemous", {
-                        direction: 'top', permanent: false, offset:[2, -30]
+                        direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Remembrance of the Blasphemous</h3>
                             <iframe src="results.html?id=blas" width="100%" height="250"
@@ -192,7 +193,7 @@
                     L.marker([355.6563, 382.9385], {
                         icon: remIcon
                     }).addTo(map).bindTooltip("Remembrance of the Omen King", {
-                        direction: 'top', permanent: false, offset:[2, -30]
+                        direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Remembrance of the Omen King</h3>
                             <iframe src="results.html?id=omen" width="100%" height="250"
@@ -202,7 +203,7 @@
                     L.marker([396.6563, 542.4385], {
                         icon: remIcon
                     }).addTo(map).bindTooltip("Remembrance of the Fire Giant", {
-                        direction: 'top', permanent: false, offset:[2, -30]
+                        direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Remembrance of the Fire Giant</h3>
                             <iframe src="results.html?id=fire" width="100%" height="250"
@@ -212,7 +213,7 @@
                     L.marker([553.1563, 480.0635], {
                         icon: remIcon
                     }).addTo(map).bindTooltip("Remembrance of the Rot Goddess", {
-                        direction: 'top', permanent: false, offset:[2, -30]
+                        direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Remembrance of the Rot Goddess</h3>
                             <iframe src="results.html?id=rot" width="100%" height="250"
@@ -222,7 +223,7 @@
                     L.marker([301.6563, 731.1885], {
                         icon: remIcon
                     }).addTo(map).bindTooltip("Remembrance of the Dragonlord", {
-                        direction: 'top', permanent: false, offset:[2, -30]
+                        direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Remembrance of the Dragonlord</h3>
                             <iframe src="results.html?id=lord" width="100%" height="250"
@@ -232,7 +233,7 @@
                     L.marker([306.0313, 747.5635], {
                         icon: remIcon
                     }).addTo(map).bindTooltip("Remembrance of the Black Blade", {
-                        direction: 'top', permanent: false, offset:[2, -30]
+                        direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Remembrance of the Black Blade</h3>
                             <iframe src="results.html?id=blade" width="100%" height="250"
@@ -242,7 +243,7 @@
                     L.marker([352.7813, 390.0635], {
                         icon: remIcon
                     }).addTo(map).bindTooltip("Remembrance of Hoarah Loux", {
-                        direction: 'top', permanent: false, offset:[2, -30]
+                        direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Remembrance of Hoarah Loux</h3>
                             <iframe src="results.html?id=lion" width="100%" height="250"
@@ -252,7 +253,7 @@
                     L.marker([349.5313, 398.3135], {
                         icon: remIcon
                     }).addTo(map).bindTooltip("Elden Remembrance", {
-                        direction: 'top', permanent: false, offset:[2, -30]
+                        direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Elden Remembrance</h3>
                             <iframe src="results.html?id=beast" width="100%" height="250"
@@ -262,33 +263,50 @@
                     L.marker([117.0918, 307.2192], {
                         icon: npcIcon
                     }).addTo(map).bindTooltip("Ranni the Witch", {
-                        direction: 'top', permanent: false, offset:[2, -30]
+                        direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Ranni the Witch</h3>
                             <iframe src="results.html?id=witch" width="100%" height="250"
                                 style="border:1;"> </iframe>
                         </div>
                     `, { maxWidth: 320 });
-                    var legend = L.control({
-                        position: "bottomleft"
-                    });
-                    
+                    L.marker([136.9355, 314.1567], {
+                        icon: npcIcon
+                    }).addTo(map).bindTooltip("Melina", {
+                        direction: 'top', permanent: false, offset: [2, -30]
+                    }).bindPopup(`<div style="width:300px;">
+                            <h3>Melina</h3>
+                            <iframe src="results.html?id=maiden" width="100%" height="250"
+                                style="border:1;"> </iframe>
+                        </div>
+                    `, { maxWidth: 320 });
+                    L.marker([431.8418, 272.0317], {
+                        icon: npcIcon
+                    }).addTo(map).bindTooltip("The Noble Goldmask", {
+                        direction: 'top', permanent: false, offset: [2, -30]
+                    }).bindPopup(`<div style="width:300px;">
+                            <h3>The Noble Goldmask</h3>
+                            <iframe src="results.html?id=mask" width="100%" height="250"
+                                style="border:1;"> </iframe>
+                        </div>
+                    `, { maxWidth: 320 });
                     var legend = L.control({ position: "bottomleft" });
 
-legend.onAdd = function () {
-    var div = L.DomUtil.create("div", "info legend");
+                    legend.onAdd = function () {
+                        var div = L.DomUtil.create("div", "info legend");
 
-    div.innerHTML += "<h4>Important Items and Places</h4>";
-    div.innerHTML += '<img src="images/brown.png" width="20"/> Divine Towers<br/>';
-    div.innerHTML += '<img src="images/blue.png" width="20"/> Remembrances<br/>'
-    div.innerHTML += '<img src="images/red.png" width="20"/> Main NPCs<br/>';
+                        div.innerHTML += "<h4>Important Items and Places</h4>";
+                        div.innerHTML += '<img src="images/brown.png" width="20"/> Divine Towers<br/>';
+                        div.innerHTML += '<img src="images/blue.png" width="20"/> Remembrances<br/>'
+                        div.innerHTML += '<img src="images/red.png" width="20"/> Main NPCs<br/>';
 
-    return div;
-};
+                        return div;
+                    };
 
-legend.addTo(map);</script>
-                </div>
+                    legend.addTo(map);</script>
             </div>
-        </section>
-    </body>
+        </div>
+    </section>
+</body>
+
 </html>

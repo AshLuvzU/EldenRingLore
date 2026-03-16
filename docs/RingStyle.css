@@ -60,7 +60,7 @@ a.link {
     margin-left: 28%;
     font-family: "Agmena";
 }
-#dialogueBox {
+.dialogue {
     width: 75%;
     margin: 20px auto;
     padding: 18px;

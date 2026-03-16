@@ -8,11 +8,35 @@ L.marker([], {
                                 style="border:1;"> </iframe>
                         </div>
                     `, { maxWidth: 320 });
-                    
+
                     <div id="" class="npc">
             <h2></h2>
-            <img class="picNpc" src=""
-                alt="" />
+            <img class="picNpc" src="" alt="Image of " />
+            <button class="button" onclick="getDialogue()">Random Dialogue</button>
+            <div id="dialogueBox"></div>
+            <script>
+                let melinaLines =[];
+                
+                fetch("EldenDialogue.json").then(res => res.json()).then(data => {
+                    
+                    const npc = data.dialog[ "100"];
+                    
+                    let rawLines = npc.info_en.split("<br/><br/>");
+                    
+                    melinaLines = rawLines.map(line => line.replace(/\[\d+\]/, "").trim()).filter(line => line.length > 0);
+                });
+                
+                function getMelinaDialogue() {
+                    
+                    if (melinaLines.length === 0) {
+                        document.getElementById("dialogueMelina").innerHTML = "Loading dialogue...";
+                        return;
+                    }
+                    
+                    const line = melinaLines[Math.floor(Math.random() * melinaLines.length)];
+                    
+                    document.getElementById("dialogueMelina").innerHTML = line;
+                }</script>
             <p></p>
             <p></p>
             <p></p>
