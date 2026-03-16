@@ -1,0 +1,19 @@
+L.marker([], {
+                        icon: npcIcon
+                    }).addTo(map).bindTooltip("", {
+                        direction: 'top', permanent: false, offset:[2, -30]
+                    }).bindPopup(`<div style="width:300px;">
+                            <h3></h3>
+                            <iframe src="results.html?id=" width="100%" height="250"
+                                style="border:1;"> </iframe>
+                        </div>
+                    `, { maxWidth: 320 });
+                    
+                    <div id="" class="npc">
+            <h2></h2>
+            <img class="picNpc" src=""
+                alt="" />
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>

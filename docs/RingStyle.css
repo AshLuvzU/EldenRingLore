@@ -56,6 +56,19 @@ a.link {
     text-decoration: none;
     font-size: 20px;
 }
+.button {
+    margin-left: 28%;
+    font-family: "Agmena";
+}
+#dialogueBox{
+    width:600px;
+    padding:20px;
+    background:#111;
+    color:#e6d8a8;
+    font-family:serif;
+    border:2px solid #444;
+    font-size:20px;
+}
 .top {
     font-family: "Mantinia Regular";
     color: rgb(229, 207, 128);
@@ -70,7 +83,7 @@ a.link {
     color: white;
     text-align: center;
 }
-.pic {
+.picRem {
     height: 60%;
     width: 60%;
     margin-left: 11%;
@@ -80,6 +93,16 @@ a.link {
     border-radius: 1000px;
     border-color: rgb(179, 134, 0, 0.7);
 }
+.picNpc {
+    height: 60%;
+    width: 60%;
+    margin-left: 11%;
+    padding: 1em;
+    border: dashed;
+    border-width: 6px;
+    border-radius: 10px;
+    border-color: rgb(153, 0, 0, 0.7);
+}
 .tower {
     background: rgb(207, 172, 42, 0.4);
     display: none;
@@ -87,6 +110,11 @@ a.link {
 }
 .rem {
     background: rgb(0, 107, 179, 0.4);
+    display: none;
+    padding: 1em;
+}
+.npc {
+    background: rgb(230, 0, 0, 0.4);
     display: none;
     padding: 1em;
 }
