@@ -367,6 +367,38 @@
             allowing the player to reallocate their stats by using a Larval Tear (also called respeccing). She can also
             be used to change the player's appearance.</p>
     </div>
+    <div id="gurranq" class="npc">
+        <h2>Gurranq, Beast Clergyman</h2>
+        <img class="picNpc" src="images/gurranq.png" alt="Image of Gurranq, Beast Clergyman" />
+        <button class="button" onclick="getBeastDialogue()">Random Dialogue</button>
+        <div id="dialogueBeast" class="dialogue"></div>
+        <script>
+            let beastLines = [];
+
+            fetch("EldenDialogue.json").then(res => res.json()).then(data => {
+
+                const npc = data.dialog["202"];
+
+                let rawLines = npc.info_en.split("<br/><br/>");
+
+                beastLines = rawLines.map(line => line.replace(/\[\d+\]/, "").trim()).filter(line => line.length > 0);
+            });
+
+            function getBeastDialogue() {
+
+                if (beastLines.length === 0) {
+                    document.getElementById("dialogueBeast").innerHTML = "Loading dialogue...";
+                    return;
+                }
+
+                const line = beastLines[Math.floor(Math.random() * beastLines.length)];
+
+                document.getElementById("dialogueBeast").innerHTML = line;
+            }</script>
+        <p>Gurranq, Beast Clergyman is an NPC in Elden Ring. Gurranq appears to be a large, hunched creature that lies
+            isolated in the Bestial Sanctum. Constantly hungering for Deathroot, he will reward those who offer it to
+            him.</p>
+    </div>
     <script>
         const params = new URLSearchParams(window.location.search);
         const id = params.get("id");

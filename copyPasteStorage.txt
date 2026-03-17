@@ -13,7 +13,7 @@ L.marker([], {
             <h2></h2>
             <img class="picNpc" src="" alt="Image of " />
             <button class="button" onclick="getDialogue()">Random Dialogue</button>
-            <div id="dialogueBox"></div>
+            <div id="dialogueBox" class="dialogue"></div>
             <script>
                 let melinaLines =[];
                 
