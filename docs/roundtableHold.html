@@ -8,12 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="RingStyle.css" />
     <link rel="icon" type="image/x-icon" href="images/eldenRing.png" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-    <script src="https://cdn.jsdelivr.net/gh/aazuspan/leaflet-feature-legend/src/feature-legend.js"></script>
-    <link href="https://cdn.jsdelivr.net/gh/aazuspan/leaflet-feature-legend/src/feature-legend.css" rel="stylesheet" />
+    <script src="popup.js"></script>
 </head>
 
 <body>
@@ -37,4 +32,33 @@
             </li>
         </ul>
     </div>
+    <section class="txt">
+        <h1>The Roundtable Hold</h1>
+        <p>Roundtable Hold is a Location in Elden Ring. The Roundtable Hold is found after Melina invites to take you
+            there. This area can only be accessed via fast travel. It is a place where the Two Fingers gathers worthy
+            tarnished to pursue the shardbearers and eventually repair the Elden Ring.<br /> There are a number of NPCs
+            located at the Roundtable, this would include:</p>
+        <ul>
+            <li> <a href="#" onclick="popup('corhyn', 'Brother Corhyn'); return false;">Brother
+                    Corhyn</a> </li>
+            <li> <a href="#" onclick="popup('d', 'D, Hunter of the Dead'); return false;">D, Hunter of the Dead</a>
+            </li>
+            <li> <a href="#" onclick="popup('dung', 'Dung Eater'); return false;">Dung Eater</a> </li>
+            <li> <a href="#" onclick="popup('ensha', 'Ensha of the Royal Remains'); return false;">Ensha of the Royal
+                    Remains</a> </li>
+            <li> <a href="#" onclick="popup('fia', 'Fia, Deathbead Companion'); return false;">Fia, Deathbead
+                    Companion</a> </li>
+            <li> <a href="#" onclick="popup('enia', 'Finger Reader Enia'); return false;">Finger Reader Enia</a> </li>
+            <li> <a href="#" onclick="popup('diallos', 'Knight Diallos'); return false;">Knight Diallos</a> </li>
+            <li> <a href="#" onclick="popup('nepheli', 'Nepheli Loux, Warrior'); return false;">Nepheli Loux,
+                    Warrior</a> </li>
+            <li> <a href="#" onclick="popup('roderika', 'Roderika'); return false;">Roderika</a> </li>
+            <li> <a href="#" onclick="popup('gideon', 'Sir Gideon Ofnir, the All-Knowing'); return false;">Sir Gideon
+                    Ofnir, the All-Knowing</a> </li>
+            <li> <a href="#" onclick="popup('hewg', 'Smithing Master Hewg'); return false;">Smithing Master Hewg</a>
+            </li>
+            <li> <a href="#" onclick="popup('rogier', 'Sorcerer Rogier'); return false;">Sorcerer Rogier</a> </li>
+        </ul>
+        <div id="popupCorhyn" class="popupContainer"></div>
+    </section>
 </body>

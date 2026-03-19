@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Results</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="RingStyle.css" />
+</head>
+
+<body>
+    <div id="marika" class="pop">
+        <h2 style="text-align: center;">Queen Marika the Eternal</h2>
+        <img class="picPop" src="images/marika.png" alt="Image of Queen Marika the Eternal" />
+        <p>Queen Marika the Eternal is a background character in Elden Ring and Shadow of the Erdtree. She is the
+            current ruler of the Lands Between, and the one who shattered the Elden Ring. She is central to much of the
+            game's narrative and lore. She has many powerful Demigod offspring, who seek the Elden Ring's remaining
+            power.</p>
+        <p>Queen Marika is the vessel for the Elden Ring, and by extension the Greater Will. The runes that constitute
+            the Elden Ring represent the laws that govern the world, currently the Golden Order, which was founded by
+            Queen Marika. The Elden Ring was shattered into shards referred to as Great Runes, which are in the
+            possession of Marika's offspring.</p>
+    </div>
+    <div id="corhyn" class="pop">
+        <h2 style="text-align: center;">Brother Corhyn</h2>
+        <img class="picPop" src="images/corhyn.png" alt="Image of Brother Corhyn" />
+        <p>Brother Corhyn is a holy practitioner who will teach you practical faith-based Incantations in exchange for
+            Runes. You will encounter him once you've reached the Roundtable Hold.</p>
+    </div>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get("id");
+
+        if (id) {
+            const section = document.getElementById(id);
+            if (section) {
+                section.style.display = "block";
+            }
+        }</script>
+</body>
+
+</html>

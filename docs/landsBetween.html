@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <div class="tree">
+    <div class="header">
         <h1 class="top">The Lands Between</h1>
         <ul id="nav">
             <li class="navB">
@@ -44,7 +44,48 @@
             The Erdtree dominates the skyline, its golden presence visible across most of the
             realm. Two great underground rivers and an enormous root system span the continent's
             length.</p>
-        <p>This area was once ruled by Queen Marika the Eternal.</p>
+        <p>This area is ruled by <a href="#" onclick="popup('marika'); return false;">
+                Queen Marika
+                the Eternal</a>.</p>
+        <div id="popupMarika" class="popupContainer"></div>
+        <script>
+            function popup(id) {
+
+                const container = document.getElementById("popupMarika");
+
+                container.innerHTML = `
+        <div class="popupContent" onclick="event.stopPropagation()">
+            
+            <button class="closeBtn" onclick="closePopup()">✕</button>
+
+            <h3>Queen Marika, the Eternal</h3>
+
+            <iframe src="resultsPopup.html?id=marika"></iframe>
+
+        </div>
+    `;
+
+                container.style.display = "flex";
+
+                setTimeout(() => {
+                    container.classList.add("active");
+                }, 10);
+            }
+
+            function closePopup() {
+
+                const container = document.getElementById("popupMarika");
+
+                container.classList.remove("active");
+
+                setTimeout(() => {
+                    container.style.display = "none";
+                    container.innerHTML = "";
+                }, 300);
+            }
+        </script>
+        <p>There is also a section of the map that is not accessible by land and can only be accessed by fast travel,
+            <a href="roundtableHold.html">The Roundtable Hold</a>.</p>
         <div class="flex-container">
             <div id="map">
                 <script>
@@ -293,7 +334,7 @@
                     L.marker([282.2168, 148.5317], {
                         icon: npcIcon
                     }).addTo(map).bindTooltip("Rennala, Queen of the Full Moon", {
-                        direction: 'top', permanent: false, offset:[2, -30]
+                        direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Rennala, Queen of the Full Moon</h3>
                             <iframe src="results.html?id=queen" width="100%" height="250"
@@ -303,7 +344,7 @@
                     L.marker([236.7168, 506.7192], {
                         icon: npcIcon
                     }).addTo(map).bindTooltip("Gurranq, Beast Clergyman", {
-                        direction: 'top', permanent: false, offset:[2, -30]
+                        direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Gurranq, Beast Clergyman</h3>
                             <iframe src="results.html?id=gurranq" width="100%" height="250"

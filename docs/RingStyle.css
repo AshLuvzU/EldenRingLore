@@ -1,24 +1,29 @@
 body {
-    background-image: url("images/oldPaper.png");
-    background-color: floralwhite;
+    background-image: url("images/oldPaperT.png");
+    background-color: rgb(183, 159, 106);
     font-family: "Agmena";
     color: black;
 }
+
 @font-face {
     font-family: "Agmena";
     src: url("fonts/Agmena W01 Regular.otf") format("opentype");
 }
+
 @font-face {
     font-family: "Mantinia Regular";
     src: url("fonts/Mantinia Regular.otf") format("opentype");
 }
+
 a:visited {
     color: rgb(242, 110, 44);
 }
+
 .flex-container {
     display: flex;
     justify-content: space-evenly;
 }
+
 #map {
     height: 600px;
     width: 800px;
@@ -28,9 +33,11 @@ a:visited {
     border-width: 5px;
     border-color: rgb(77, 51, 0);
 }
+
 .leaflet-control-mouseposition {
     background-color: rgb(255, 220, 46, 0.5);
 }
+
 ul#nav {
     overflow: hidden;
     display: flex;
@@ -38,6 +45,7 @@ ul#nav {
     padding: 0;
     justify-content: center;
 }
+
 li.navB {
     display: block;
     padding: 10px;
@@ -46,20 +54,29 @@ li.navB {
     border-color: rgb(24, 16, 2);
     background-color: rgb(72, 48, 5);
 }
-a:hover {
+
+a.link:hover {
     color: #d4af2b;
     background-color: rgb(229, 207, 128, 0.3);
     padding: 2em;
 }
+
 a.link {
     padding: 2em;
     text-decoration: none;
     font-size: 20px;
 }
+
+a {
+    color: rgb(99, 65, 10);
+    text-decoration: none;
+}
+
 .button {
     margin-left: 28%;
     font-family: "Agmena";
 }
+
 .dialogue {
     width: 75%;
     margin: 20px auto;
@@ -73,11 +90,14 @@ a.link {
     text-align: center;
     font-family: "Agmena";
 }
+
 .top {
     font-family: "Mantinia Regular";
     color: rgb(45, 28, 8);
+    text-shadow: 2px 2px rgb(255, 243, 218);
 }
-.tree {
+
+.header {
     background-image: url("images/erdtree.png");
     padding: 0em;
     width: auto;
@@ -87,6 +107,7 @@ a.link {
     color: white;
     text-align: center;
 }
+
 .picRem {
     height: 60%;
     width: 60%;
@@ -97,6 +118,7 @@ a.link {
     border-radius: 1000px;
     border-color: rgb(179, 134, 0, 0.7);
 }
+
 .picNpc {
     height: 60%;
     width: 60%;
@@ -107,23 +129,47 @@ a.link {
     border-radius: 10px;
     border-color: rgb(153, 0, 0, 0.7);
 }
+
+.picPop {
+    height: 60%;
+    width: 60%;
+    margin-left: 15%;
+    padding: 1em;
+    border: dashed;
+    border-width: 6px;
+    border-radius: 10px;
+    border-color: rgba(104, 67, 11, 0.842);
+}
+
+.pop {
+    background:rgb(187, 122, 48, 0.4);
+    display: none;
+    padding: 1em;
+    font-family: "Agmena";
+}
+    
+
 .tower {
     background: rgb(207, 172, 42, 0.4);
     display: none;
     padding: 1em;
 }
+
 .rem {
     background: rgb(0, 107, 179, 0.4);
     display: none;
     padding: 1em;
     font-family: "Agmena";
 }
+
 .npc {
     background: rgb(230, 0, 0, 0.4);
     display: none;
     padding: 1em;
     font-family: "Agmena";
+    display: none;
 }
+
 .gif {
     height: 60%;
     width: 60%;
@@ -133,6 +179,7 @@ a.link {
     border-width: 6px;
     border-color: rgb(179, 134, 0, 0.7);
 }
+
 section.txt {
     background: rgb(207, 172, 42, 0.4);
     width: 80%;
@@ -142,6 +189,7 @@ section.txt {
     margin: auto;
     padding: 1em;
 }
+
 .legend {
     background: rgb(207, 172, 42, 0.4);
     color: black;
@@ -152,16 +200,80 @@ section.txt {
     font-family: "Cinzel", serif;
     font-size: 14px;
 }
+
 .legend h4 {
     margin: 0 0 8px 0;
     font-size: 16px;
     text-align: center;
     color: #ffd700;
 }
+
 .legend img {
     vertical-align: middle;
     margin-right: 6px;
 }
+
 .legend:hover {
     box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+}
+
+.popupContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(6px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 9999;
+}
+
+.popupContainer.active {
+    display: flex;
+    opacity: 1;
+}
+
+.popupContent {
+    width: 500px;
+    padding: 20px;
+    background: linear-gradient(180deg, #0a0a0a, #111);
+    color: #e6d8a8;
+    border: 3px solid #8b7500;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+    font-family: serif;
+    text-align: center;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.popupContainer.active .popupContent {
+    transform: scale(1);
+}
+
+.popupContent h3 {
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.popupContent iframe {
+    width: 100%;
+    height: 260px;
+    border: none;
+    margin-top: 10px;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 18px;
+    background: none;
+    border: none;
+    color: #e6d8a8;
+    cursor: pointer;
 }
