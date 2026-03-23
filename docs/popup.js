@@ -1,16 +1,16 @@
 function popup(id, name) {
     console.log("Opening popup for:", id);
 
-    const container = document.getElementById("popupCorhyn");
+    const container = document.getElementById("popup" + capitalize(id));
 
     container.innerHTML = `
         <div class="popupContent" onclick="event.stopPropagation()">
             
-            <button class="closeBtn" onclick="closePopup('corhyn', 'Brother Corhyn')">✕</button>
+            <button class="closeBtn" onclick="closePopup('${id}', '${name}')">✕</button>
 
-            <h3>Brother Corhyn</h3>
+            <h3>${name}</h3>
 
-            <iframe src="resultsPopup.html?id=corhyn"></iframe>
+            <iframe src="resultsPopup.html?id=${id}"></iframe>
 
         </div>
     `;
@@ -24,7 +24,7 @@ function popup(id, name) {
 
 function closePopup(id, name) {
 
-    const container = document.getElementById("popupCorhyn");
+    const container = document.getElementById("popup" + capitalize(id));
 
     container.classList.remove("active");
 
@@ -32,4 +32,8 @@ function closePopup(id, name) {
         container.style.display = "none";
         container.innerHTML = "";
     }, 300);
+}
+
+function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
 }
