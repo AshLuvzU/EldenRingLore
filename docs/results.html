@@ -399,6 +399,209 @@
             isolated in the Bestial Sanctum. Constantly hungering for Deathroot, he will reward those who offer it to
             him.</p>
     </div>
+    <div id="wolf" class="npc">
+        <h2>Blaidd the Half-Wolf</h2>
+        <img class="picNpc" src="images/blaidd.png" alt="Image of Blaidd the Half-Wolf" />
+        <button class="button" onclick="getBlaiddDialogue()">Random Dialogue</button>
+        <div id="dialogueBlaidd" class="dialogue"></div>
+        <script>
+            let blaiddLines = [];
+
+            fetch("EldenDialogue.json").then(res => res.json()).then(data => {
+
+                const npc = data.dialog["216"];
+
+                let rawLines = npc.info_en.split("<br/><br/>");
+
+                blaiddLines = rawLines.map(line => line.replace(/\[\d+\]/, "").trim()).filter(line => line.length > 0);
+            });
+
+            function getBlaiddDialogue() {
+
+                if (blaiddLines.length === 0) {
+                    document.getElementById("dialogueBlaidd").innerHTML = "Loading dialogue...";
+                    return;
+                }
+
+                const line = blaiddLines[Math.floor(Math.random() * blaiddLines.length)];
+
+                document.getElementById("dialogueBlaidd").innerHTML = line;
+            }</script>
+        <p>Blaidd is half man, half wolf, and is found howling in the Mistwood Ruins. He is the trusted companion and
+            shadow of Ranni the Witch.</p>
+    </div>
+    <div id="albus" class="npc">
+        <h2>Old Albus</h2>
+        <img class="picNpc" src="images/albus.png" alt="Image of Old Albus" />
+        <button class="button" onclick="getAlbusDialogue()">Random Dialogue</button>
+        <div id="dialogueAlbus" class="dialogue"></div>
+        <script>
+            let albusLines = [];
+
+            fetch("EldenDialogue.json").then(res => res.json()).then(data => {
+
+                const npc = data.dialog["219"];
+
+                let rawLines = npc.info_en.split("<br/><br/>");
+
+                albusLines = rawLines.map(line => line.replace(/\[\d+\]/, "").trim()).filter(line => line.length > 0);
+            });
+
+            function getAlbusDialogue() {
+
+                if (albusLines.length === 0) {
+                    document.getElementById("dialogueAlbus").innerHTML = "Loading dialogue...";
+                    return;
+                }
+
+                const line = albusLines[Math.floor(Math.random() * albusLines.length)];
+
+                document.getElementById("dialogueAlbus").innerHTML = line;
+            }</script>
+        <p>Albus is an Albinauric who is trying to hide from the calamity that befell Village of the Albinaurics in
+            Liurnia of the Lakes. He has an important item that he will entrust to you.</p>
+        <p>Albus can be found disguised as a pot by following the path up from the Village of the Albinaurics site of
+            grace in western Liurnia of the Lakes. You must hit the pot located past the Depraved Perfumer to get him to
+            show up. Then talk to him twice.</p>
+    </div>
+    <div id="jar" class="npc">
+        <h2>Alexander, Warrior Jar</h2>
+        <img class="picNpc" src="images/alexander.png" alt="Image of Alexander, Warrior Jar" />
+        <button class="button" onclick="getJarDialogue()">Random Dialogue</button>
+        <div id="dialogueJar" class="dialogue"></div>
+        <script>
+            let jarLines = [];
+
+            fetch("EldenDialogue.json").then(res => res.json()).then(data => {
+
+                const npc = data.dialog["220"];
+
+                let rawLines = npc.info_en.split("<br/><br/>");
+
+                jarLines = rawLines.map(line => line.replace(/\[\d+\]/, "").trim()).filter(line => line.length > 0);
+            });
+
+            function getJarDialogue() {
+
+                if (jarLines.length === 0) {
+                    document.getElementById("dialogueJar").innerHTML = "Loading dialogue...";
+                    return;
+                }
+
+                const line = jarLines[Math.floor(Math.random() * jarLines.length)];
+
+                document.getElementById("dialogueJar").innerHTML = line;
+            }</script>
+        <p>Iron Fist Alexander is a large Living Jar who set out from his home one day in search of adventure, seeking
+            to become a mighty warrior. He also becomes available as an NPC Summon cooperater where he can fight
+            alongside players.</p>
+    </div>
+    <div id="boc" class="npc">
+        <h2>Demi-Human Boc</h2>
+        <img class="picNpc" src="images/boc.png" alt="Image of Demi-Human Boc" />
+        <button class="button" onclick="getBocDialogue()">Random Dialogue</button>
+        <div id="dialogueBoc" class="dialogue"></div>
+        <script>
+            let bocLines = [];
+
+            fetch("EldenDialogue.json").then(res => res.json()).then(data => {
+
+                const npc = data.dialog["223"];
+
+                let rawLines = npc.info_en.split("<br/><br/>");
+
+                bocLines = rawLines.map(line => line.replace(/\[\d+\]/, "").trim()).filter(line => line.length > 0);
+            });
+
+            function getBocDialogue() {
+
+                if (bocLines.length === 0) {
+                    document.getElementById("dialogueBoc").innerHTML = "Loading dialogue...";
+                    return;
+                }
+
+                const line = bocLines[Math.floor(Math.random() * bocLines.length)];
+
+                document.getElementById("dialogueBoc").innerHTML = line;
+            }</script>
+        <p>Boc is a Demi-Human who is capable of advanced communication. Boc is initially met by the player in the form
+            of a small tree.</p>
+        <p>Once you have completed Boc's questline, he appears at Graces in the Altus Plateau, and allows you to Alter
+            equipment without paying the standard 500 rune fee. Boc does not provide any new or different alterations.
+        </p>
+    </div>
+    <div id="iji" class="npc">
+        <h2>War Master Iji</h2>
+        <img class="picNpc" src="images/iji.png" alt="Image of War Master Iji" />
+        <button class="button" onclick="getIjiDialogue()">Random Dialogue</button>
+        <div id="dialogueIji" class="dialogue"></div>
+        <script>
+            let ijiLines = [];
+
+            fetch("EldenDialogue.json").then(res => res.json()).then(data => {
+
+                const npc = data.dialog["224"];
+
+                let rawLines = npc.info_en.split("<br/><br/>");
+
+                ijiLines = rawLines.map(line => line.replace(/\[\d+\]/, "").trim()).filter(line => line.length > 0);
+            });
+
+            function getIjiDialogue() {
+
+                if (ijiLines.length === 0) {
+                    document.getElementById("dialogueIji").innerHTML = "Loading dialogue...";
+                    return;
+                }
+
+                const line = ijiLines[Math.floor(Math.random() * ijiLines.length)];
+
+                document.getElementById("dialogueIji").innerHTML = line;
+            }</script>
+        <p>War Counselor Iji (first encountered as Smithing Master Iji) is a gentle troll in charge of the smithing for
+            the Carian Royal Family, but will also provide his services to the player. He can be found by heading north
+            into the slopes of Western Liurnia of the Lakes.</p>
+    </div>
+    <div id="latenna" class="npc">
+        <h2>Latenna the Albinauric</h2>
+        <img class="picNpc" src="images/latenna.png" alt="Image of Latenna the Albinauric" />
+        <button class="button" onclick="getLatennaDialogue()">Random Dialogue</button>
+        <div id="dialogueLatenna" class="dialogue"></div>
+        <script>
+            let latennaLines = [];
+
+            fetch("EldenDialogue.json").then(res => res.json()).then(data => {
+
+                const npc = data.dialog["228"];
+
+                let rawLines = npc.info_en.split("<br/><br/>");
+
+                latennaLines = rawLines.map(line => line.replace(/\[\d+\]/, "").trim()).filter(line => line.length > 0);
+            });
+
+            function getLatennaDialogue() {
+
+                if (latennaLines.length === 0) {
+                    document.getElementById("dialogueLatenna").innerHTML = "Loading dialogue...";
+                    return;
+                }
+
+                const line = latennaLines[Math.floor(Math.random() * latennaLines.length)];
+
+                document.getElementById("dialogueLatenna").innerHTML = line;
+            }</script>
+        <p>Latenna can be found sitting in front of the Slumbering Wolf's Shack in Liurnia of the Lakes. This area is
+            only accessible after completing the Lakeside Crystal Cave dungeon.</p>
+        <p>Latenna's questline is tied to the NPC Albus, who can be found in the Village of the Albinaurics.<br /> When
+            you speak to Albus, he gives you the Haligtree Secret Medallion (Right) and asks you to deliver it to
+            Latenna. If you approach Latenna with the medallion, she will trust you and request that you take her to the
+            land of Miquella’s Haligtree.<br />
+            If you promise to take Latenna to the Haligtree, she will join you as a Spirit summon, Latenna the
+            Albinauric, and hint at the location of the Haligtree Secret Medallion (Left).<br />
+            Upon reaching the Apostate Derelict located in the Consecrated Snowfield players can interact
+            with the giant Albinauric woman to summon Latenna. Doing so, Latenna will reward the player with a Somber
+            Ancient Dragon Smithing Stone.</p>
+    </div>
     <script>
         const params = new URLSearchParams(window.location.search);
         const id = params.get("id");

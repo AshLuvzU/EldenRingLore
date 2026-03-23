@@ -142,12 +142,12 @@ a {
 }
 
 .pop {
-    background:rgb(187, 122, 48, 0.4);
+    background: rgb(187, 122, 48, 0.4);
     display: none;
     padding: 1em;
     font-family: "Agmena";
 }
-    
+
 
 .tower {
     background: rgb(207, 172, 42, 0.4);
@@ -241,7 +241,7 @@ section.txt {
 .popupContent {
     width: 500px;
     padding: 20px;
-    background: linear-gradient(180deg, #0a0a0a, #111);
+    background: linear-gradient(180deg, #885f22, #312207);
     color: #e6d8a8;
     border: 3px solid #8b7500;
     box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
@@ -276,4 +276,23 @@ section.txt {
     border: none;
     color: #e6d8a8;
     cursor: pointer;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+    font-family: "Agmena" !important;
+    font-size: 16px !important;
+    background: linear-gradient(180deg, #885f22, #312207) !important;
+    color: #e6d8a8 !important;
+    border: 3px solid #8b7500 !important;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.5) !important;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+    color: #c6b477 !important;
+}
+
+.leaflet-container a.leaflet-popup-close-button:hover,
+.leaflet-container a.leaflet-popup-close-button:focus {
+    color: #e6d8a8 !important;
 }
