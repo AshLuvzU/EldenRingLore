@@ -602,6 +602,37 @@
             with the giant Albinauric woman to summon Latenna. Doing so, Latenna will reward the player with a Somber
             Ancient Dragon Smithing Stone.</p>
     </div>
+    <div id="tanith" class="npc">
+        <h2>Tanith, Volcano Manor Proprietress</h2>
+        <img class="picNpc" src="images/tanith.png" alt="Image of Tanith, Volcano Manor Proprietress" />
+        <button class="button" onclick="getTanithDialogue()">Random Dialogue</button>
+        <div id="dialogueTanith" class="dialogue"></div>
+        <script>
+            let tanithLines = [];
+
+            fetch("EldenDialogue.json").then(res => res.json()).then(data => {
+
+                const npc = data.dialog["300"];
+
+                let rawLines = npc.info_en.split("<br/><br/>");
+
+                tanithLines = rawLines.map(line => line.replace(/\[\d+\]/, "").trim()).filter(line => line.length > 0);
+            });
+
+            function getTanithDialogue() {
+
+                if (tanithLines.length === 0) {
+                    document.getElementById("dialogueTanith").innerHTML = "Loading dialogue...";
+                    return;
+                }
+
+                const line = tanithLines[Math.floor(Math.random() * tanithLines.length)];
+
+                document.getElementById("dialogueTanith").innerHTML = line;
+            }</script>
+            <p>Tanith is the head of the Volcano Manor, and asks the players about joining forces against the Fingers. If
+            you decide to join her quest, you will receive particular missions as well as access to some new Npcs.</p>
+    </div>
     <script>
         const params = new URLSearchParams(window.location.search);
         const id = params.get("id");

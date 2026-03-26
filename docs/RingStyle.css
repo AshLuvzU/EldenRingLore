@@ -73,8 +73,16 @@ a {
 }
 
 .button {
+    background: rgba(0, 0, 0, 0.85);
+    box-shadow: 0 0 12px rgba(247, 206, 72, 0.7);
+    color: #e6d8a8;
+    border: 3px solid #8b7500;
     margin-left: 28%;
     font-family: "Agmena";
+}
+
+.button:hover {
+    box-shadow: 0 0 12px rgba(247, 206, 72);
 }
 
 .dialogue {
@@ -84,7 +92,7 @@ a {
     background: rgba(0, 0, 0, 0.85);
     color: #e6d8a8;
     border: 3px solid #8b7500;
-    box-shadow: 0 0 12px rgba(212, 175, 55, 0.5);
+    box-shadow: 0 0 12px rgba(247, 206, 72, 0.7);
     font-size: 22px;
     line-height: 1.6;
     text-align: center;
@@ -190,15 +198,27 @@ section.txt {
     padding: 1em;
 }
 
+#button {
+    font-family: "Agmena";
+    font-size: 16px;
+    background: rgba(209, 187, 149, 0.6);
+    margin: auto;
+}
+
+#button:hover {
+    background: rgb(248, 219, 170);
+}
+
 .legend {
     background: rgb(207, 172, 42, 0.4);
     color: black;
-    padding: 12px;
+    padding: 8px;
     border-radius: 8px;
     border: 2px solid #8b7500;
     box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
-    font-family: "Cinzel", serif;
-    font-size: 14px;
+    font-family: "Agmena";
+    font-size: 16px;
+    width: 200px;
 }
 
 .legend h4 {

@@ -85,7 +85,8 @@
             }
         </script>
         <p>There is also a section of the map that is not accessible by land and can only be accessed by fast travel,
-            <a href="roundtableHold.html">The Roundtable Hold</a>.</p>
+            <a href="roundtableHold.html">The Roundtable Hold</a>.
+        </p>
         <div class="flex-container">
             <div id="map">
                 <script>
@@ -128,12 +129,15 @@
                     var npcIcon = new IconIcon({
                         iconUrl: 'images/red.png'
                     });
+                    var towerLayer = L.layerGroup().addTo(map);
+                    var remLayer = L.layerGroup().addTo(map);
+                    var npcLayer = L.layerGroup().addTo(map);
                     L.icon = function (options) {
                         return new L.Icon(options);
                     };
                     L.marker([261.2656, 278.2192], {
                         icon: towerIcon
-                    }).addTo(map).bindTooltip("Divine Tower of Liurnia", {
+                    }).addTo(towerLayer).bindTooltip("Divine Tower of Liurnia", {
                         direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Divine Tower of Liurnia</h3>
@@ -143,7 +147,7 @@
                     `, { maxWidth: 320 });
                     L.marker([186.6406, 356.5317], {
                         icon: towerIcon
-                    }).addTo(map).bindTooltip("Divine Tower of Limgrave", {
+                    }).addTo(towerLayer).bindTooltip("Divine Tower of Limgrave", {
                         direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Divine Tower of Limgrave</h3>
@@ -153,7 +157,7 @@
                     `, { maxWidth: 320 });
                     L.marker([215.6563, 421.9385], {
                         icon: towerIcon
-                    }).addTo(map).bindTooltip("Divine Tower of Caelid", {
+                    }).addTo(towerLayer).bindTooltip("Divine Tower of Caelid", {
                         direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Divine Tower of Caelid</h3>
@@ -163,7 +167,7 @@
                     `, { maxWidth: 320 });
                     L.marker([283.5156, 510.2192], {
                         icon: towerIcon
-                    }).addTo(map).bindTooltip("Isolated Divine Tower", {
+                    }).addTo(towerLayer).bindTooltip("Isolated Divine Tower", {
                         direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Isolated Divine Tower</h3>
@@ -173,7 +177,7 @@
                     `, { maxWidth: 320 });
                     L.marker([349.8906, 435.9692], {
                         icon: towerIcon
-                    }).addTo(map).bindTooltip("Divine Tower of East Altus", {
+                    }).addTo(towerLayer).bindTooltip("Divine Tower of East Altus", {
                         direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Divine Tower of East Altus</h3>
@@ -183,7 +187,7 @@
                     `, { maxWidth: 320 });
                     L.marker([338.4063, 328.3135], {
                         icon: towerIcon
-                    }).addTo(map).bindTooltip("Divine Tower of West Altus", {
+                    }).addTo(towerLayer).bindTooltip("Divine Tower of West Altus", {
                         direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Divine Tower of West Altus</h3>
@@ -193,7 +197,7 @@
                     `, { maxWidth: 320 });
                     L.marker([132.1563, 532.8135], {
                         icon: remIcon
-                    }).addTo(map).bindTooltip("Remembrance of the Starscourge", {
+                    }).addTo(remLayer).bindTooltip("Remembrance of the Starscourge", {
                         direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Remembrance of the Starscourge</h3>
@@ -203,7 +207,7 @@
                     `, { maxWidth: 320 });
                     L.marker([169.1563, 256.6885], {
                         icon: remIcon
-                    }).addTo(map).bindTooltip("Remembrance of the Grafted", {
+                    }).addTo(remLayer).bindTooltip("Remembrance of the Grafted", {
                         direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Remembrance of the Grafted</h3>
@@ -213,7 +217,7 @@
                     `, { maxWidth: 320 });
                     L.marker([282.2031, 150.4692], {
                         icon: remIcon
-                    }).addTo(map).bindTooltip("Remembrance of the Full Moon Queen", {
+                    }).addTo(remLayer).bindTooltip("Remembrance of the Full Moon Queen", {
                         direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Remembrance of the Full Moon Queen</h3>
@@ -223,7 +227,7 @@
                     `, { maxWidth: 320 });
                     L.marker([413.0781, 191.0317], {
                         icon: remIcon
-                    }).addTo(map).bindTooltip("Remembrance of the Blasphemous", {
+                    }).addTo(remLayer).bindTooltip("Remembrance of the Blasphemous", {
                         direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Remembrance of the Blasphemous</h3>
@@ -233,7 +237,7 @@
                     `, { maxWidth: 320 });
                     L.marker([355.6563, 382.9385], {
                         icon: remIcon
-                    }).addTo(map).bindTooltip("Remembrance of the Omen King", {
+                    }).addTo(remLayer).bindTooltip("Remembrance of the Omen King", {
                         direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Remembrance of the Omen King</h3>
@@ -243,7 +247,7 @@
                     `, { maxWidth: 320 });
                     L.marker([396.6563, 542.4385], {
                         icon: remIcon
-                    }).addTo(map).bindTooltip("Remembrance of the Fire Giant", {
+                    }).addTo(remLayer).bindTooltip("Remembrance of the Fire Giant", {
                         direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Remembrance of the Fire Giant</h3>
@@ -253,7 +257,7 @@
                     `, { maxWidth: 320 });
                     L.marker([553.1563, 480.0635], {
                         icon: remIcon
-                    }).addTo(map).bindTooltip("Remembrance of the Rot Goddess", {
+                    }).addTo(remLayer).bindTooltip("Remembrance of the Rot Goddess", {
                         direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Remembrance of the Rot Goddess</h3>
@@ -263,7 +267,7 @@
                     `, { maxWidth: 320 });
                     L.marker([301.6563, 731.1885], {
                         icon: remIcon
-                    }).addTo(map).bindTooltip("Remembrance of the Dragonlord", {
+                    }).addTo(remLayer).bindTooltip("Remembrance of the Dragonlord", {
                         direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Remembrance of the Dragonlord</h3>
@@ -273,7 +277,7 @@
                     `, { maxWidth: 320 });
                     L.marker([306.0313, 747.5635], {
                         icon: remIcon
-                    }).addTo(map).bindTooltip("Remembrance of the Black Blade", {
+                    }).addTo(remLayer).bindTooltip("Remembrance of the Black Blade", {
                         direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Remembrance of the Black Blade</h3>
@@ -283,7 +287,7 @@
                     `, { maxWidth: 320 });
                     L.marker([352.7813, 390.0635], {
                         icon: remIcon
-                    }).addTo(map).bindTooltip("Remembrance of Hoarah Loux", {
+                    }).addTo(remLayer).bindTooltip("Remembrance of Hoarah Loux", {
                         direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Remembrance of Hoarah Loux</h3>
@@ -293,7 +297,7 @@
                     `, { maxWidth: 320 });
                     L.marker([349.5313, 398.3135], {
                         icon: remIcon
-                    }).addTo(map).bindTooltip("Elden Remembrance", {
+                    }).addTo(remLayer).bindTooltip("Elden Remembrance", {
                         direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Elden Remembrance</h3>
@@ -303,7 +307,7 @@
                     `, { maxWidth: 320 });
                     L.marker([117.0918, 307.2192], {
                         icon: npcIcon
-                    }).addTo(map).bindTooltip("Ranni the Witch", {
+                    }).addTo(npcLayer).bindTooltip("Ranni the Witch", {
                         direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Ranni the Witch</h3>
@@ -313,7 +317,7 @@
                     `, { maxWidth: 320 });
                     L.marker([136.9355, 314.1567], {
                         icon: npcIcon
-                    }).addTo(map).bindTooltip("Melina", {
+                    }).addTo(npcLayer).bindTooltip("Melina", {
                         direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Melina</h3>
@@ -323,7 +327,7 @@
                     `, { maxWidth: 320 });
                     L.marker([431.8418, 272.0317], {
                         icon: npcIcon
-                    }).addTo(map).bindTooltip("The Noble Goldmask", {
+                    }).addTo(npcLayer).bindTooltip("The Noble Goldmask", {
                         direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>The Noble Goldmask</h3>
@@ -333,7 +337,7 @@
                     `, { maxWidth: 320 });
                     L.marker([282.2168, 148.5317], {
                         icon: npcIcon
-                    }).addTo(map).bindTooltip("Rennala, Queen of the Full Moon", {
+                    }).addTo(npcLayer).bindTooltip("Rennala, Queen of the Full Moon", {
                         direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Rennala, Queen of the Full Moon</h3>
@@ -343,7 +347,7 @@
                     `, { maxWidth: 320 });
                     L.marker([236.7168, 506.7192], {
                         icon: npcIcon
-                    }).addTo(map).bindTooltip("Gurranq, Beast Clergyman", {
+                    }).addTo(npcLayer).bindTooltip("Gurranq, Beast Clergyman", {
                         direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Gurranq, Beast Clergyman</h3>
@@ -353,7 +357,7 @@
                     `, { maxWidth: 320 });
                     L.marker([121.2168, 373.9688], {
                         icon: npcIcon
-                    }).addTo(map).bindTooltip("Blaidd the Half-Wolf", {
+                    }).addTo(npcLayer).bindTooltip("Blaidd the Half-Wolf", {
                         direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Blaidd the Half-Wolf</h3>
@@ -363,7 +367,7 @@
                     `, { maxWidth: 320 });
                     L.marker([202.7344, 139.7500], {
                         icon: npcIcon
-                    }).addTo(map).bindTooltip("Old Albus", {
+                    }).addTo(npcLayer).bindTooltip("Old Albus", {
                         direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Old Albus</h3>
@@ -373,7 +377,7 @@
                     `, { maxWidth: 320 });
                     L.marker([162.4668, 333.3438], {
                         icon: npcIcon
-                    }).addTo(map).bindTooltip("Alexander, Warrior Jar", {
+                    }).addTo(npcLayer).bindTooltip("Alexander, Warrior Jar", {
                         direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Alexander, Warrior Jar</h3>
@@ -383,7 +387,7 @@
                     `, { maxWidth: 320 });
                     L.marker([126.9043, 334.7188], {
                         icon: npcIcon
-                    }).addTo(map).bindTooltip("Demi-Human Boc", {
+                    }).addTo(npcLayer).bindTooltip("Demi-Human Boc", {
                         direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Demi-Human Boc</h3>
@@ -393,7 +397,7 @@
                     `, { maxWidth: 320 });
                     L.marker([336.7793, 135.0313], {
                         icon: npcIcon
-                    }).addTo(map).bindTooltip("War Master Iji", {
+                    }).addTo(npcLayer).bindTooltip("War Master Iji", {
                         direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>War Master Iji</h3>
@@ -403,11 +407,21 @@
                     `, { maxWidth: 320 });
                     L.marker([195.0918, 190.8438], {
                         icon: npcIcon
-                    }).addTo(map).bindTooltip("Latenna the Albinauric", {
+                    }).addTo(npcLayer).bindTooltip("Latenna the Albinauric", {
                         direction: 'top', permanent: false, offset: [2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3>Latenna the Albinauric</h3>
                             <iframe src="results.html?id=latenna" width="100%" height="250"
+                                style="border:1;"> </iframe>
+                        </div>
+                    `, { maxWidth: 320 });
+                    L.marker([417.4043, 181.0938], {
+                        icon: npcIcon
+                    }).addTo(npcLayer).bindTooltip("Tanith, Volcano Manor Proprietress", {
+                        direction: 'top', permanent: false, offset: [2, -30]
+                    }).bindPopup(`<div style="width:300px;">
+                            <h3>Tanith, Volcano Manor Proprietress</h3>
+                            <iframe src="results.html?id=tanith" width="100%" height="250"
                                 style="border:1;"> </iframe>
                         </div>
                     `, { maxWidth: 320 });
@@ -417,14 +431,48 @@
                         var div = L.DomUtil.create("div", "info legend");
 
                         div.innerHTML += "<h4>Important Items and Places</h4>";
-                        div.innerHTML += '<img src="images/brown.png" width="20"/> Divine Towers<br/>';
-                        div.innerHTML += '<img src="images/blue.png" width="20"/> Remembrances<br/>'
-                        div.innerHTML += '<img src="images/red.png" width="20"/> Main NPCs<br/>';
+                        div.innerHTML += '<button onclick="toggleTowers()" id="button"><img src="images/brown.png" width="20"/> Divine Towers<br/></button>';
+                        div.innerHTML += '<button onclick="toggleRemembrances()" id="button"><img src="images/blue.png" width="20"/> Remembrances<br/></button>';
+                        div.innerHTML += '<button onclick="toggleNpcs()" id="button"><img src="images/red.png" width="20"/> Main NPCs<br/></button>';
 
                         return div;
                     };
 
-                    legend.addTo(map);</script>
+                    legend.addTo(map);
+                    let towersVisible = true;
+                    let remembrancesVisible = true;
+                    let npcsVisible = true;
+
+                    function toggleTowers() {
+                        towersVisible = !towersVisible;
+
+                        if (towersVisible) {
+                            towerLayer.addTo(map);
+                        } else {
+                            map.removeLayer(towerLayer);
+                        }
+                    }
+
+                    function toggleRemembrances() {
+                        remembrancesVisible = !remembrancesVisible;
+
+                        if (remembrancesVisible) {
+                            remLayer.addTo(map);
+                        } else {
+                            map.removeLayer(remLayer);
+                        }
+                    }
+
+                    function toggleNpcs() {
+                        npcsVisible = !npcsVisible;
+
+                        if (npcsVisible) {
+                            npcLayer.addTo(map);
+                        } else {
+                            map.removeLayer(npcLayer);
+                        }
+                    }
+                </script>
             </div>
         </div>
     </section>
