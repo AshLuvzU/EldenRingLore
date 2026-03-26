@@ -61,12 +61,6 @@ a.link:hover {
     padding: 2em;
 }
 
-a.link {
-    padding: 2em;
-    text-decoration: none;
-    font-size: 20px;
-}
-
 a {
     color: rgb(163, 113, 32);
     text-decoration: none;
