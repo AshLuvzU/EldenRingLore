@@ -630,8 +630,40 @@
 
                 document.getElementById("dialogueTanith").innerHTML = line;
             }</script>
-            <p>Tanith is the head of the Volcano Manor, and asks the players about joining forces against the Fingers. If
+        <p>Tanith is the head of the Volcano Manor, and asks the players about joining forces against the Fingers. If
             you decide to join her quest, you will receive particular missions as well as access to some new Npcs.</p>
+    </div>
+    <div id="white" class="npc">
+        <h2>White Mask Varré</h2>
+        <img class="picNpc" src="images/varre.png" alt="Image of White Mask Varré" />
+        <button class="button" onclick="getVarreDialogue()">Random Dialogue</button>
+        <div id="dialogueVarre" class="dialogue"></div>
+        <script>
+            let varreLines = [];
+
+            fetch("EldenDialogue.json").then(res => res.json()).then(data => {
+
+                const npc = data.dialog["301"];
+
+                let rawLines = npc.info_en.split("<br/><br/>");
+
+                varreLines = rawLines.map(line => line.replace(/\[\d+\]/, "").trim()).filter(line => line.length > 0);
+            });
+
+            function getVarreDialogue() {
+
+                if (varreLines.length === 0) {
+                    document.getElementById("dialogueVarre").innerHTML = "Loading dialogue...";
+                    return;
+                }
+
+                const line = varreLines[Math.floor(Math.random() * varreLines.length)];
+
+                document.getElementById("dialogueVarre").innerHTML = line;
+            }</script>
+        <p>White Mask Varré is encountered near the start of the game, right by The First Step Site of Grace, and will
+            offer advice to the player. He can be found multiple times in different locations as the story progresses.
+        </p>
     </div>
     <script>
         const params = new URLSearchParams(window.location.search);

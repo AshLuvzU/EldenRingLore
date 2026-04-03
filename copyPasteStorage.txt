@@ -1,6 +1,6 @@
 L.marker([], {
                         icon: npcIcon
-                    }).addTo(map).bindTooltip("", {
+                    }).addTo(npcLayer).bindTooltip("", {
                         direction: 'top', permanent: false, offset:[2, -30]
                     }).bindPopup(`<div style="width:300px;">
                             <h3></h3>
