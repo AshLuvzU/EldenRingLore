@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+   <meta resp="ebb">This file is a output of character names pulled from the Elden Dialog lore script.
+             We have prepared two lists: 
+             <list type="meta">
+         <item>The first numbered list with <code>@type</code> of <value>"full-with-repeats"</value>
+                  because we found at least one 
+             represented more than once in the source EldenDialog.json.</item>
+         <item>The second numbered list with <code>@type</code> of <value>"distinct-values"</value> simply
+                 removes the duplicates.</item>
+      </list>
+   </meta>
+   <list type="full-with-repeats">
+      <item num="1">Narator</item>
+      <item num="2">Ghost</item>
+      <item num="3">Stage Directions</item>
+      <item num="4">Melina</item>
+      <item num="5">Finger Reader Enia</item>
+      <item num="6">Ranni the Witch</item>
+      <item num="7">The Noble Goldmask</item>
+      <item num="8">Rennala, Queen of the Full Moon</item>
+      <item num="9">Gurranq, Beast Clergyman</item>
+      <item num="10">Smithing Master Hewg</item>
+      <item num="11">Blaidd the Half-Wolf</item>
+      <item num="12">Asimi, Silver Tear</item>
+      <item num="13">Old Albus</item>
+      <item num="14">Alexander, Warrior Jar</item>
+      <item num="15">Unknown NPC 221</item>
+      <item num="16">Demi-Human Boc</item>
+      <item num="17">Smithing Master Iji</item>
+      <item num="18">Jar-Bairn</item>
+      <item num="19">Aurelia's Sister</item>
+      <item num="20">Latenna the Albinauric</item>
+      <item num="21">Tanith, Volcano Manor Proprietress</item>
+      <item num="22">White Mask Varré</item>
+      <item num="23">Gatekeeper Gostoc</item>
+      <item num="24">Guilbert the Redeemer (cut npc)</item>
+      <item num="25">Preceptor Seluvis</item>
+      <item num="26">Patches</item>
+      <item num="27">Irina of Morne</item>
+      <item num="28">Castellan Edgar</item>
+      <item num="29">Castellan Jerren</item>
+      <item num="30">Rya the Scout</item>
+      <item num="31">Knight Diallos</item>
+      <item num="32">Sorceress Sellen</item>
+      <item num="33">Yura, Hunter of Bloody Fingers</item>
+      <item num="34">D, Hunter of the Dead</item>
+      <item num="35">Heartbroken Maiden</item>
+      <item num="36">Kenneth Haight, Limgrave Heir</item>
+      <item num="37">Fia, Deathbed Companion</item>
+      <item num="38">Dung Eater</item>
+      <item num="39">Sir Gideon Ofnir, the All-Knowing</item>
+      <item num="40">Sorcerer Rogier</item>
+      <item num="41">Knight Bernahl</item>
+      <item num="42">Miriel, Pastor of Vows</item>
+      <item num="43">Blackguard</item>
+      <item num="44">Knight of Rykard</item>
+      <item num="45">Sorcerer Thops</item>
+      <item num="46">Nepheli Loux, Warrior</item>
+      <item num="47">Reeling Rico</item>
+      <item num="48">Omenhunter Shanehaight (cut npc)</item>
+      <item num="49">Millicent</item>
+      <item num="50">Sage Gowry</item>
+      <item num="51">Brother Corhyn</item>
+      <item num="52">Finger Reader Crone</item>
+      <item num="53">Merchant Kalé</item>
+      <item num="54">Nomadic Merchant</item>
+      <item num="55">Unknown NPC 2029</item>
+      <item num="56">Stage Directions</item>
+      <item num="57">End of Game Dialog + Extra Morgott</item>
+      <item num="58">Rennala, Queen of the Full Moon</item>
+      <item num="59">Maliketh, the Black Blade</item>
+      <item num="60">Malenia, Blade of Miquella</item>
+      <item num="61">Margit, the Fell Omen</item>
+      <item num="62">Morgott, the Omen King</item>
+      <item num="63">Rykard, Lord of Blasphemy</item>
+      <item num="64">Godfrey, First Elden Lord</item>
+      <item num="65">Godrick the Grafted</item>
+      <item num="66">Mohg, Lord of Blood</item>
+   </list>
+   <list type="deduped">
+      <item num="1">Narator</item>
+      <item num="2">Ghost</item>
+      <item num="3">Stage Directions</item>
+      <item num="4">Melina</item>
+      <item num="5">Finger Reader Enia</item>
+      <item num="6">Ranni the Witch</item>
+      <item num="7">The Noble Goldmask</item>
+      <item num="8">Rennala, Queen of the Full Moon</item>
+      <item num="9">Gurranq, Beast Clergyman</item>
+      <item num="10">Smithing Master Hewg</item>
+      <item num="11">Blaidd the Half-Wolf</item>
+      <item num="12">Asimi, Silver Tear</item>
+      <item num="13">Old Albus</item>
+      <item num="14">Alexander, Warrior Jar</item>
+      <item num="15">Unknown NPC 221</item>
+      <item num="16">Demi-Human Boc</item>
+      <item num="17">Smithing Master Iji</item>
+      <item num="18">Jar-Bairn</item>
+      <item num="19">Aurelia's Sister</item>
+      <item num="20">Latenna the Albinauric</item>
+      <item num="21">Tanith, Volcano Manor Proprietress</item>
+      <item num="22">White Mask Varré</item>
+      <item num="23">Gatekeeper Gostoc</item>
+      <item num="24">Guilbert the Redeemer (cut npc)</item>
+      <item num="25">Preceptor Seluvis</item>
+      <item num="26">Patches</item>
+      <item num="27">Irina of Morne</item>
+      <item num="28">Castellan Edgar</item>
+      <item num="29">Castellan Jerren</item>
+      <item num="30">Rya the Scout</item>
+      <item num="31">Knight Diallos</item>
+      <item num="32">Sorceress Sellen</item>
+      <item num="33">Yura, Hunter of Bloody Fingers</item>
+      <item num="34">D, Hunter of the Dead</item>
+      <item num="35">Heartbroken Maiden</item>
+      <item num="36">Kenneth Haight, Limgrave Heir</item>
+      <item num="37">Fia, Deathbed Companion</item>
+      <item num="38">Dung Eater</item>
+      <item num="39">Sir Gideon Ofnir, the All-Knowing</item>
+      <item num="40">Sorcerer Rogier</item>
+      <item num="41">Knight Bernahl</item>
+      <item num="42">Miriel, Pastor of Vows</item>
+      <item num="43">Blackguard</item>
+      <item num="44">Knight of Rykard</item>
+      <item num="45">Sorcerer Thops</item>
+      <item num="46">Nepheli Loux, Warrior</item>
+      <item num="47">Reeling Rico</item>
+      <item num="48">Omenhunter Shanehaight (cut npc)</item>
+      <item num="49">Millicent</item>
+      <item num="50">Sage Gowry</item>
+      <item num="51">Brother Corhyn</item>
+      <item num="52">Finger Reader Crone</item>
+      <item num="53">Merchant Kalé</item>
+      <item num="54">Nomadic Merchant</item>
+      <item num="55">Unknown NPC 2029</item>
+      <item num="56">End of Game Dialog + Extra Morgott</item>
+      <item num="57">Maliketh, the Black Blade</item>
+      <item num="58">Malenia, Blade of Miquella</item>
+      <item num="59">Margit, the Fell Omen</item>
+      <item num="60">Morgott, the Omen King</item>
+      <item num="61">Rykard, Lord of Blasphemy</item>
+      <item num="62">Godfrey, First Elden Lord</item>
+      <item num="63">Godrick the Grafted</item>
+      <item num="64">Mohg, Lord of Blood</item>
+   </list>
+</xml>
