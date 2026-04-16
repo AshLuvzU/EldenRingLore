@@ -2539,7 +2539,7 @@
       </scene>
    </character>
    <character id="200" name="Rennala, Queen of the Full Moon">
-      <scene block="2000000">
+      <scene block="2000000" type="boss-fight">
          <utterance id="2000010">
             <text lang="en">Come, sweetings, become what ye desire.</text>
             <text lang="jp">さあ、良い子たち、なりたいものにおなり…</text>
@@ -2637,7 +2637,7 @@
             <text lang="jp">…どこに行ってしまったの？私の良い子たち 隠れていないで、出ておいて。暗くたって、怖くないわ 私の愛し子、タマゴがいるもの。だからさあ、出ておいで</text>
          </utterance>
       </scene>
-      <scene block="2024000">
+      <scene block="2024000" type="npc-conversation">
          <utterance id="2024010">
             <text lang="en">Ahh, art thou come to be born anew?</text>
             <text lang="jp">ああ、貴方も、また産まれにきたのね</text>
