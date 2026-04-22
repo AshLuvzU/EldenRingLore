@@ -10156,10 +10156,6 @@
    </character>
    <character id="902110001" name="Maliketh, the Black Blade">
       <scene block="2023000" type="boss-fight">
-         <utterance id="2023000">
-            <text lang="en"/>
-            <text lang="jp"/>
-         </utterance>
          <utterance id="2023010">
             <text lang="en">O, Death.</text>
             <text lang="jp">…死よ</text>
@@ -10171,14 +10167,6 @@
          <utterance id="2023020">
             <text lang="en">Become my blade, once more.</text>
             <text lang="jp">今一度、我が剣に</text>
-         </utterance>
-         <utterance id="2023030">
-            <text lang="en"/>
-            <text lang="jp"/>
-         </utterance>
-         <utterance id="2023040">
-            <text lang="en"/>
-            <text lang="jp"/>
          </utterance>
          <utterance id="2023050">
             <text lang="en">&lt;long exhalation&gt;</text>
