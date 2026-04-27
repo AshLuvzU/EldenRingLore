@@ -5,6 +5,11 @@ body {
     color: black;
 }
 
+.C {
+    text-align: center;
+    font-family: "Agmena" !important;
+}
+
 @font-face {
     font-family: "Agmena";
     src: url("fonts/Agmena W01 Regular.otf") format("opentype");
@@ -183,6 +188,7 @@ a {
     font-family: "Mantinia Regular";
     color: rgb(45, 28, 8);
     text-shadow: 2px 2px rgb(255, 243, 218);
+    font-size: xxx-large;
 }
 
 .header {
