@@ -34,6 +34,86 @@ a:visited {
     border-color: rgb(77, 51, 0);
 }
 
+#map2 {
+    height: 600px;
+    width: 800px;
+    margin: auto;
+    background: black;
+    border: groove;
+    border-width: 5px;
+    border-color: rgb(77, 51, 0);
+}
+
+#map3 {
+    height: 600px;
+    width: 800px;
+    margin: auto;
+    background: black;
+    border: groove;
+    border-width: 5px;
+    border-color: rgb(77, 51, 0);
+}
+
+#map4 {
+    height: 600px;
+    width: 800px;
+    margin: auto;
+    background: black;
+    border: groove;
+    border-width: 5px;
+    border-color: rgb(77, 51, 0);
+}
+
+#map5 {
+    height: 600px;
+    width: 800px;
+    margin: auto;
+    background: black;
+    border: groove;
+    border-width: 5px;
+    border-color: rgb(77, 51, 0);
+}
+
+#map6 {
+    height: 600px;
+    width: 800px;
+    margin: auto;
+    background: black;
+    border: groove;
+    border-width: 5px;
+    border-color: rgb(77, 51, 0);
+}
+
+#map7 {
+    height: 600px;
+    width: 800px;
+    margin: auto;
+    background: black;
+    border: groove;
+    border-width: 5px;
+    border-color: rgb(77, 51, 0);
+}
+
+#map8 {
+    height: 600px;
+    width: 800px;
+    margin: auto;
+    background: black;
+    border: groove;
+    border-width: 5px;
+    border-color: rgb(77, 51, 0);
+}
+
+#map9 {
+    height: 600px;
+    width: 800px;
+    margin: auto;
+    background: black;
+    border: groove;
+    border-width: 5px;
+    border-color: rgb(77, 51, 0);
+}
+
 .leaflet-control-mouseposition {
     background-color: rgb(255, 220, 46, 0.5);
 }

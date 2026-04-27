@@ -76,29 +76,32 @@
                 </script>
             </div>
         </div>
+        <p>This frist collection focuses on all the data I pulled from all the boss fights, a lot of the words are
+            conected to many characters at once. <br />Youll also notice that there are repeats of the same character in
+            the network, this is the different scene blocks for each character.</p>
         <div class="flex-container">
-            <div id="map">
+            <div id="map2">
                 <script>
-                    var map = L.map('map', {
+                    var map2 = L.map('map2', {
                         maxZoom: 4,
                         crs: L.CRS.Simple
                     });
                     var CoordsControl = L.Control.extend({
-                        onAdd: function (map) {
+                        onAdd: function (map2) {
                             var container = L.DomUtil.create('div', 'leaflet-control-mouseposition');
-                            map.on('mousemove', function (e) {
+                            map2.on('mousemove', function (e) {
                                 container.innerHTML = 'Lat: ' + e.latlng.lat.toFixed(4) + ', Lng: ' + e.latlng.lng.toFixed(4);
                             });
                             return container;
                         },
-                        onRemove: function (map) {
+                        onRemove: function (map2) {
                         }
                     });
 
                     var imageUrl = 'images/Rennala_network.png';
                     var imageBounds = [[0, 0], [500, 800]];
-                    L.imageOverlay(imageUrl, imageBounds).addTo(map);
-                    map.fitBounds(imageBounds);
+                    L.imageOverlay(imageUrl, imageBounds).addTo(map2);
+                    map2.fitBounds(imageBounds);
                     var IconIcon = L.Icon.extend({
                         options: {
                             iconSize: [50, 50],
@@ -109,6 +112,246 @@
                 </script>
             </div>
         </div>
+        <p>Rennala has the most words associated with just one scene out of all the dialog I pulled. Her words are
+            etheral sounding, as her purpose in game is to birth the player anew. </p>
+        <div class="flex-container">
+            <div id="map3">
+                <script>
+                    var map3 = L.map('map3', {
+                        maxZoom: 4,
+                        crs: L.CRS.Simple
+                    });
+                    var CoordsControl = L.Control.extend({
+                        onAdd: function (map3) {
+                            var container = L.DomUtil.create('div', 'leaflet-control-mouseposition');
+                            map3.on('mousemove', function (e) {
+                                container.innerHTML = 'Lat: ' + e.latlng.lat.toFixed(4) + ', Lng: ' + e.latlng.lng.toFixed(4);
+                            });
+                            return container;
+                        },
+                        onRemove: function (map3) {
+                        }
+                    });
+
+                    var imageUrl = 'images/Godrick_network.png';
+                    var imageBounds = [[0, 0], [500, 800]];
+                    L.imageOverlay(imageUrl, imageBounds).addTo(map3);
+                    map3.fitBounds(imageBounds);
+                    var IconIcon = L.Icon.extend({
+                        options: {
+                            iconSize: [50, 50],
+                            iconAnchor: [23, 40],
+                            popupAnchor: [2, -30]
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+        <p>Godrick is the most talkitive in his boss fight, as he has the most words associated with him and his many
+            scenes. His theme is more treating the player as unfit for Elden Lord and how he as an Omen will take the
+            player down.</p>
+        <p>The next couple of collections are not as interesting data wise, they have very little words associated with
+            them, and they have a generic theme of just calling the player undeserving of the throne.</p>
+        <div class="flex-container">
+            <div id="map4">
+                <script>
+                    var map4 = L.map('map4', {
+                        maxZoom: 4,
+                        crs: L.CRS.Simple
+                    });
+                    var CoordsControl = L.Control.extend({
+                        onAdd: function (map4) {
+                            var container = L.DomUtil.create('div', 'leaflet-control-mouseposition');
+                            map4.on('mousemove', function (e) {
+                                container.innerHTML = 'Lat: ' + e.latlng.lat.toFixed(4) + ', Lng: ' + e.latlng.lng.toFixed(4);
+                            });
+                            return container;
+                        },
+                        onRemove: function (map4) {
+                        }
+                    });
+
+                    var imageUrl = 'images/Malenia_network.png';
+                    var imageBounds = [[0, 0], [500, 800]];
+                    L.imageOverlay(imageUrl, imageBounds).addTo(map4);
+                    map4.fitBounds(imageBounds);
+                    var IconIcon = L.Icon.extend({
+                        options: {
+                            iconSize: [50, 50],
+                            iconAnchor: [23, 40],
+                            popupAnchor: [2, -30]
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+        <div class="flex-container">
+            <div id="map5">
+                <script>
+                    var map5 = L.map('map5', {
+                        maxZoom: 4,
+                        crs: L.CRS.Simple
+                    });
+                    var CoordsControl = L.Control.extend({
+                        onAdd: function (map5) {
+                            var container = L.DomUtil.create('div', 'leaflet-control-mouseposition');
+                            map5.on('mousemove', function (e) {
+                                container.innerHTML = 'Lat: ' + e.latlng.lat.toFixed(4) + ', Lng: ' + e.latlng.lng.toFixed(4);
+                            });
+                            return container;
+                        },
+                        onRemove: function (map5) {
+                        }
+                    });
+
+                    var imageUrl = 'images/Rykard_network.png';
+                    var imageBounds = [[0, 0], [500, 800]];
+                    L.imageOverlay(imageUrl, imageBounds).addTo(map5);
+                    map5.fitBounds(imageBounds);
+                    var IconIcon = L.Icon.extend({
+                        options: {
+                            iconSize: [50, 50],
+                            iconAnchor: [23, 40],
+                            popupAnchor: [2, -30]
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+        <div class="flex-container">
+            <div id="map6">
+                <script>
+                    var map6 = L.map('map6', {
+                        maxZoom: 4,
+                        crs: L.CRS.Simple
+                    });
+                    var CoordsControl = L.Control.extend({
+                        onAdd: function (map6) {
+                            var container = L.DomUtil.create('div', 'leaflet-control-mouseposition');
+                            map6.on('mousemove', function (e) {
+                                container.innerHTML = 'Lat: ' + e.latlng.lat.toFixed(4) + ', Lng: ' + e.latlng.lng.toFixed(4);
+                            });
+                            return container;
+                        },
+                        onRemove: function (map6) {
+                        }
+                    });
+
+                    var imageUrl = 'images/Godfrey_network.png';
+                    var imageBounds = [[0, 0], [500, 800]];
+                    L.imageOverlay(imageUrl, imageBounds).addTo(map6);
+                    map6.fitBounds(imageBounds);
+                    var IconIcon = L.Icon.extend({
+                        options: {
+                            iconSize: [50, 50],
+                            iconAnchor: [23, 40],
+                            popupAnchor: [2, -30]
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+        <div class="flex-container">
+            <div id="map7">
+                <script>
+                    var map7 = L.map('map7', {
+                        maxZoom: 4,
+                        crs: L.CRS.Simple
+                    });
+                    var CoordsControl = L.Control.extend({
+                        onAdd: function (map7) {
+                            var container = L.DomUtil.create('div', 'leaflet-control-mouseposition');
+                            map7.on('mousemove', function (e) {
+                                container.innerHTML = 'Lat: ' + e.latlng.lat.toFixed(4) + ', Lng: ' + e.latlng.lng.toFixed(4);
+                            });
+                            return container;
+                        },
+                        onRemove: function (map7) {
+                        }
+                    });
+
+                    var imageUrl = 'images/Morgott_network.png';
+                    var imageBounds = [[0, 0], [500, 800]];
+                    L.imageOverlay(imageUrl, imageBounds).addTo(map7);
+                    map7.fitBounds(imageBounds);
+                    var IconIcon = L.Icon.extend({
+                        options: {
+                            iconSize: [50, 50],
+                            iconAnchor: [23, 40],
+                            popupAnchor: [2, -30]
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+        <div class="flex-container">
+            <div id="map8">
+                <script>
+                    var map8 = L.map('map8', {
+                        maxZoom: 4,
+                        crs: L.CRS.Simple
+                    });
+                    var CoordsControl = L.Control.extend({
+                        onAdd: function (map8) {
+                            var container = L.DomUtil.create('div', 'leaflet-control-mouseposition');
+                            map8.on('mousemove', function (e) {
+                                container.innerHTML = 'Lat: ' + e.latlng.lat.toFixed(4) + ', Lng: ' + e.latlng.lng.toFixed(4);
+                            });
+                            return container;
+                        },
+                        onRemove: function (map8) {
+                        }
+                    });
+
+                    var imageUrl = 'images/Margit_network.png';
+                    var imageBounds = [[0, 0], [500, 800]];
+                    L.imageOverlay(imageUrl, imageBounds).addTo(map8);
+                    map8.fitBounds(imageBounds);
+                    var IconIcon = L.Icon.extend({
+                        options: {
+                            iconSize: [50, 50],
+                            iconAnchor: [23, 40],
+                            popupAnchor: [2, -30]
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+        <div class="flex-container">
+            <div id="map9">
+                <script>
+                    var map9 = L.map('map9', {
+                        maxZoom: 4,
+                        crs: L.CRS.Simple
+                    });
+                    var CoordsControl = L.Control.extend({
+                        onAdd: function (map9) {
+                            var container = L.DomUtil.create('div', 'leaflet-control-mouseposition');
+                            map9.on('mousemove', function (e) {
+                                container.innerHTML = 'Lat: ' + e.latlng.lat.toFixed(4) + ', Lng: ' + e.latlng.lng.toFixed(4);
+                            });
+                            return container;
+                        },
+                        onRemove: function (map9) {
+                        }
+                    });
+
+                    var imageUrl = 'images/Maliketh_network.png';
+                    var imageBounds = [[0, 0], [500, 800]];
+                    L.imageOverlay(imageUrl, imageBounds).addTo(map9);
+                    map9.fitBounds(imageBounds);
+                    var IconIcon = L.Icon.extend({
+                        options: {
+                            iconSize: [50, 50],
+                            iconAnchor: [23, 40],
+                            popupAnchor: [2, -30]
+                        }
+                    });
+                </script>
+            </div>
+        </div>
+        <p>Even though its I wasn't able to find a theme with Malikeths words, he does have the least out of everyone.
+        </p>
     </section>
 </body>
 
