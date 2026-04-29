@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Elden Ring Lore</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="RingStyle.css" />
+    <link rel="icon" type="image/x-icon" href="images/eldenRing.png" />
+</head>
+
+<body>
+    <div class="header">
+        <h1 class="top">Home</h1>
+        <ul id="nav">
+            <li class="navB">
+                <a class="link" href="index.html">Home</a>
+            </li>
+            <li class="navB">
+                <a class="link" href="landsBetween.html">The Lands Between</a>
+            </li>
+            <li class="navB">
+                <a class="link" href="ainselRiver.html">Ainsel River</a>
+            </li>
+            <li class="navB">
+                <a class="link" href="siofraRiver.html">Siofra River</a>
+            </li>
+            <li class="navB">
+                <a class="link" href="deeprootDepths.html">DeeprootDepths</a>
+            </li>
+            <li class="navB">
+                <a class="link" href="credits.html">Credits</a>
+            </li>
+        </ul>
+    </div>
+    <section class="txt">
+        <h1>How did I use Leaflet JS for in this project?</h1>
+        <h2>A quick explanation</h2>
+        <p> Leaflet is an open-source JavaScript library used for mobile friendly inetactive maps. Typically it is used
+            with <a href="https://www.openstreetmap.org/#map=4/38.01/-95.84">OpenStreetMap</a> but I modified it to
+            display
+            a single image for the map.<br />There are a numeber of ways to make maps using SVGs and other
+            means (demonstrated here in this <a href="https://bloodborne.newtfire.org/index.html">Bloodborne project</a>
+            by previous DIGIT students!) but I wanted you to be able to zoom and look at the details of the map
+            within the game to show off how beautiful the map is and where exactly all the points are.</p>
+        <h2>What I modified</h2>
+        <p>The main thing I modified is how it displays a single image for the maps. They way I did this was replacing
+            the part of the code,</p>
+        <pre class="LCode">L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);</pre>
+        <p>with this</p>
+        <pre class="LCode">var imageUrl = 'images/eldenMap.png';
+                    var imageBounds = [[0, 0], [600, 800]];
+                    L.imageOverlay(imageUrl, imageBounds).addTo(map);
+                    map.fitBounds(imageBounds);</pre>
+        <p>which allowed for there to be a single image that wasn't tiled.
+        </p>
+        <h2>How I added the custom markers</h2>
+        <p>For the markers on the map I had to make each icon type separately and add them to a layer group (this was
+            for hiding and showing each category of marker, I will explain this later). The code for this looked as so,
+        </p>
+        <pre class="LCode">var IconIcon = L.Icon.extend({
+                        options: {
+                            iconSize: [50, 50],
+                            iconAnchor: [23, 40],
+                            popupAnchor: [2, -30]
+                        }
+                    });
+                    var remIcon = new IconIcon({
+                        iconUrl: 'images/blue.png'
+                    });
+                    var towerIcon = new IconIcon({
+                        iconUrl: 'images/brown.png'
+                    });
+                    var npcIcon = new IconIcon({
+                        iconUrl: 'images/red.png'
+                    });
+                    var towerLayer = L.layerGroup().addTo(map);
+                    var remLayer = L.layerGroup().addTo(map);
+                    var npcLayer = L.layerGroup().addTo(map);
+                    L.icon = function (options) {
+                        return new L.Icon(options);
+                    };</pre>
+        <p>That first section, the icon options, is just defining how big the icons will be on the map and where it is
+            anchored within its image limits.<br /> The three vars are there to establish each kind of marker, as you
+            can see they are an NPC, tower, and rememberance markers.<br /> The layer group section of that code is for
+            the hide/show option I added to the legend, which is useful for when it gets too cluttered on the map. I
+            will
+            show how this specifically works in the next code explanation.</p>
+        <h2>The legend</h2>
+        <p>The legend was a later addition to the map, specifically after I started to add a lot of points. The colors
+            help distinguish them enough, but after a lot of overlap, I decided to add the show/hide
+            feature.<br /> The code for the legend looks like:</p>
+        <pre class="LCode">var legend = L.control({ position: "bottomleft" });
+
+                    legend.onAdd = function () {
+                        var div = L.DomUtil.create("div", "info legend");
+
+                        div.innerHTML += "<h4>Important Items and Places</h4>";
+                        div.innerHTML += '<button onclick="toggleTowers()" id="button"><img src="images/brown.png" width="20"/> Divine Towers<br/></button>';
+                        div.innerHTML += '<button onclick="toggleRemembrances()" id="button"><img src="images/blue.png" width="20"/> Remembrances<br/></button>';
+                        div.innerHTML += '<button onclick="toggleNpcs()" id="button"><img src="images/red.png" width="20"/> Main NPCs<br/></button>';
+
+                        return div;
+                    };
+
+                    legend.addTo(map);
+                    let towersVisible = true;
+                    let remembrancesVisible = true;
+                    let npcsVisible = true;
+
+                    function toggleTowers() {
+                        towersVisible = !towersVisible;
+
+                        if (towersVisible) {
+                            towerLayer.addTo(map);
+                        } else {
+                            map.removeLayer(towerLayer);
+                        }
+                    }
+
+                    function toggleRemembrances() {
+                        remembrancesVisible = !remembrancesVisible;
+
+                        if (remembrancesVisible) {
+                            remLayer.addTo(map);
+                        } else {
+                            map.removeLayer(remLayer);
+                        }
+                    }
+
+                    function toggleNpcs() {
+                        npcsVisible = !npcsVisible;
+
+                        if (npcsVisible) {
+                            npcLayer.addTo(map);
+                        } else {
+                            map.removeLayer(npcLayer);
+                        }
+                    }</pre>
+        <p>You can see in this code snippet that the functions for the toggles are listed, this was the reason for the
+            layer groups, as the function toggle only worked if they were grouped.</p>
+    </section>
+    <footer class="C">
+        <p><a href="https://ashluvzu.github.io/EldenRingLore/index.html">Elden Ring Lore Interactive Map</a> © 2026 by
+            <a href="https://github.com/AshLuvzU">Ashton Maloney</a> is licensed under <a
+                href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a><img
+                src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt=""
+                style="max-width: 1em;max-height:1em;margin-left: .2em;"><img
+                src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt=""
+                style="max-width: 1em;max-height:1em;margin-left: .2em;">
+        </p>
+
+    </footer>
+</body>
+
+</html>

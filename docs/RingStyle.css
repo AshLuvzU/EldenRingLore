@@ -24,6 +24,14 @@ a:visited {
     color: rgb(242, 110, 44);
 }
 
+.LCode{
+    font-size: 20px;
+    font-family: "Agmena" !important;
+    font-weight: 1000;
+    color:rgb(139, 34, 34);
+    background:rgba(190, 164, 103, 0.5);
+}
+
 .flex-container {
     display: flex;
     justify-content: space-evenly;
@@ -200,6 +208,23 @@ a {
     border-style: solid;
     color: white;
     text-align: center;
+}
+.prof {
+    height: 20%;
+    width: 20%;
+    display: block;
+    margin: auto;
+    padding: 1em;
+    border-style: solid;
+    border-radius: 1000px;
+    border-color:rgb(57, 37, 1)
+}
+
+.prof:hover{
+    background:rgb(190, 164, 103, 0.5);
+    opacity: 0.7;
+    box-shadow: 0 0 2px 1px #e6d8a8;
+    padding: 1em;
 }
 
 .picRem {
