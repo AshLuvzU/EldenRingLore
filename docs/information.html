@@ -35,9 +35,10 @@
         </ul>
     </div>
     <section class="txt">
-        <h1>How did I use Leaflet JS for in this project?</h1>
+        <h1>How did I use Leaflet JS in this project?</h1>
         <h2>A quick explanation</h2>
-        <p> Leaflet is an open-source JavaScript library used for mobile friendly inetactive maps. Typically it is used
+        <p> <a href="https://leafletjs.com/index.html">Leaflet</a> is an open-source JavaScript library used for mobile
+            friendly inetactive maps. Typically it is used
             with <a href="https://www.openstreetmap.org/#map=4/38.01/-95.84">OpenStreetMap</a> but I modified it to
             display
             a single image for the map.<br />There are a numeber of ways to make maps using SVGs and other
@@ -58,7 +59,7 @@
                     map.fitBounds(imageBounds);</pre>
         <p>which allowed for there to be a single image that wasn't tiled.
         </p>
-        <h2>How I added the custom markers</h2>
+        <h2>The custom markers</h2>
         <p>For the markers on the map I had to make each icon type separately and add them to a layer group (this was
             for hiding and showing each category of marker, I will explain this later). The code for this looked as so,
         </p>
@@ -90,6 +91,70 @@
             the hide/show option I added to the legend, which is useful for when it gets too cluttered on the map. I
             will
             show how this specifically works in the next code explanation.</p>
+        <h2>The popups</h2>
+        <p>The popups weren't hard to add to the map itself, it just consisted of a lot of copy and pasting information.
+        </p>
+        <pre class="LCode">L.marker([261.2656, 278.2192], {
+                        icon: towerIcon
+                    }).addTo(towerLayer).bindTooltip("Divine Tower of Liurnia", {
+                        direction: 'top', permanent: false, offset: [2, -30]
+                    }).bindPopup(`&lt;div style="width:300px;"&gt;
+                            &lt;h3&gt;Divine Tower of Liurnia&lt;/h3&gt;
+                            &lt;iframe src="results.html?id=liurnia" width="100%" height="250"
+                                style="border:1;"> &lt;/iframe&gt;
+                        &lt;/div&gt;
+                    `, { maxWidth: 320 });</pre>
+        <p>You can see in the example above that there is a set of coordinates, this is the point at which the marker is
+            placed. To find this I added a tempory coords control, once all the markers are added I plan to remove this
+            as it doesn't corralate to the in game coords.</p>
+        <pre class="LCode">var CoordsControl = L.Control.extend({
+                        onAdd: function (map) {
+                            var container = L.DomUtil.create('div', 'leaflet-control-mouseposition');
+                            map.on('mousemove', function (e) {
+                                container.innerHTML = 'Lat: ' + e.latlng.lat.toFixed(4) + ', Lng: ' + e.latlng.lng.toFixed(4);
+                            });
+                            return container;
+                        },
+                        onRemove: function (map) {
+                        }
+                    });
+
+                    map.addControl(new CoordsControl({
+                        position: 'bottomleft'
+                    }));</pre>
+        <p>Within the bind.popup element there is an iFrame, this iFrame pulls from an HTML that isnt accessible from
+            the website itself. This HTML contains information for the popup, such as information about the item,
+            location, or NPC.<br /> In the case of the NPC, there is another thing it grabs for the random dialogue. The
+            dialogue comes from a JSON file I sourced from the <a
+                href="https://eldenringexplorer.github.io/EldenRingTextExplorer/#dialog0">Elden Ring Text Explorer</a>
+            which is randomly selected using this code:</p>
+        <pre class="LCode">let melinaLines = [];
+
+            fetch("EldenDialogue.json").then(res => res.json()).then(data => {
+
+                const npc = data.dialog["100"];
+
+                let rawLines = npc.info_en.split("&lt;br/&gt;&lt;br/&gt;");
+
+                melinaLines = rawLines.map(line => line.replace(/\[\d+\]/, "").trim()).filter(line => line.length > 0);
+            });
+
+            function getMelinaDialogue() {
+
+                if (melinaLines.length === 0) {
+                    document.getElementById("dialogueMelina").innerHTML = "Loading dialogue...";
+                    return;
+                }
+
+                const line = melinaLines[Math.floor(Math.random() * melinaLines.length)];
+
+                document.getElementById("dialogueMelina").innerHTML = line;
+            }</pre>
+        <p>The function const.npc = data.dialog["100"]; uses the number, in this case 100, to identify the exact set of
+            dialogue for the character. Like in the example above, 100 is used for the character Melina, but Varré uses
+            the number 301.<br /> There is also the function let rawLines = npc.info_en.split("&lt;br/&gt;&lt;br/&gt;");
+            which
+            seperates each string of dialogue when it encounters a set of breaks in the JSON.</p>
         <h2>The legend</h2>
         <p>The legend was a later addition to the map, specifically after I started to add a lot of points. The colors
             help distinguish them enough, but after a lot of overlap, I decided to add the show/hide
@@ -99,10 +164,10 @@
                     legend.onAdd = function () {
                         var div = L.DomUtil.create("div", "info legend");
 
-                        div.innerHTML += "<h4>Important Items and Places</h4>";
-                        div.innerHTML += '<button onclick="toggleTowers()" id="button"><img src="images/brown.png" width="20"/> Divine Towers<br/></button>';
-                        div.innerHTML += '<button onclick="toggleRemembrances()" id="button"><img src="images/blue.png" width="20"/> Remembrances<br/></button>';
-                        div.innerHTML += '<button onclick="toggleNpcs()" id="button"><img src="images/red.png" width="20"/> Main NPCs<br/></button>';
+                        div.innerHTML += "&lt;h4&gt;Important Items and Places&lt;/h4&gt;";
+                        div.innerHTML += '&lt;button onclick="toggleTowers()" id="button"&gt;&lt;img src="images/brown.png" width="20"/&gt; Divine Towers&lt;br/&gt;&lt;/button&gt;';
+                        div.innerHTML += '&lt;button onclick="toggleRemembrances()" id="button"&gt;&lt;img src="images/blue.png" width="20"/&gt; Remembrances&lt;br/&gt;&lt;/button&gt;';
+                        div.innerHTML += '&lt;button onclick="toggleNpcs()" id="button"&gt;&lt;img src="images/red.png" width="20"/&gt; Main NPCs&lt;br/&gt;&lt;/button&gt;';
 
                         return div;
                     };
@@ -142,7 +207,33 @@
                         }
                     }</pre>
         <p>You can see in this code snippet that the functions for the toggles are listed, this was the reason for the
-            layer groups, as the function toggle only worked if they were grouped.</p>
+            layer groups, as the function toggle only worked if they were grouped. <br /> There are also the buttons
+            which are used to collapse each category witthin the legend. These are made with an inner HTML element,
+            which allows that HTML display to work with the JS fuction.</p>
+        <h2>CSS changes</h2>
+        <p>One of the other things I modified from the original Leaflet library was the css of the map. The popups of
+            the markers were very plain at first, but I wanted them to be in the same golden color scheme so I took the
+            CSS from the original file, and styled it to fit what I wanted.</p>
+        <pre class="LCode">.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+    font-family: "Agmena" !important;
+    font-size: 16px !important;
+    background: linear-gradient(180deg, #885f22, #312207) !important;
+    color: #e6d8a8 !important;
+    border: 3px solid #8b7500 !important;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.5) !important;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+    color: #c6b477 !important;
+}
+
+.leaflet-container a.leaflet-popup-close-button:hover,
+.leaflet-container a.leaflet-popup-close-button:focus {
+    color: #e6d8a8 !important;
+}</pre>
+        <p>The !important at the end of the CSS properties overrides the original CSS of Leaflet. This allowed me to not
+            mess with the actual file and store all my CSS in one file.</p>
     </section>
     <footer class="C">
         <p><a href="https://ashluvzu.github.io/EldenRingLore/index.html">Elden Ring Lore Interactive Map</a> © 2026 by
