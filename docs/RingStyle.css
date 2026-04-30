@@ -30,9 +30,9 @@ a:visited {
     font-weight: 1000;
     color:rgb(139, 34, 34);
     background:rgba(190, 164, 103, 0.5);
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    overflow-x: auto;
+    white-space: pre-wrap !important;
+    word-wrap: break-word !important;
+    overflow-x: auto !important;
 }
 
 .flex-container {
